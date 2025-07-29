@@ -12,7 +12,7 @@ Um den Respberry Pi des Rovers über SSH anzusteuern, muss ein Hotspot mit den f
 2. Schalter an der Rückseite des Rovers nach oben Umlegen.
       - Das Display auf der Rckseite sollte aufleuchten und **mindestens ~11V** anzeigen.
       - Die LEDS des Brainboads sollten nun auch die 5V bestätigen.
-      - Sollte der Akku nicht die nötige Ladung aufweisen, bitte wie [hier erklärt](https://github.com/MikaBabel/IP-Marsrover/blob/main/hardware/doku/Akkus/readme.md) aufladen.
+      - Sollte der Akku nicht die nötige Ladung aufweisen, bitte wie [hier erklärt](./hardware/doku/Akkus/readme.md) aufladen.
             
 ## Controller an den Pi Anschließen
 Als nächstes wird ein Controller über die USB Schnittstellen des Pis angeschlossen.   
