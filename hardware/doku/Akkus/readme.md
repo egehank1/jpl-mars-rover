@@ -35,17 +35,18 @@ An der C240 Duo Ladestation können bis zu zwei Akkus geladen werden. Dabei ist 
 ![Ladegerät](84bc507b-521b-459f-82b5-fb9470bec461.jpg)
 
 Folgende Schritte zum Laden des Akkus ausführen:
- - 1. Das Versorgungskabel des Akkus mit dem der Ladestation verbinden (auf dem Bild oben; das dickere Kabel, oben rechts).
- - 2. Das Informationskabel des Akkus mit dem HX-Adapter Sockel "4S" verbinden (auf dem Bild oben; das 5-adrige Kabel, unten links).
- - 3. Netzstecker der Ladestation einstecken und die Ladestation (auf der Rückseite) einschalten.
- - 4. Für die weiteren Anweisungen ist hier zu beachten: die beiden linken Anschlüsse, an der Vorderseite der Ladestation, ist mit der oberen Anzeige und Steuerung verbunden. Die rechten Anschlüsse sind mit der unteren Anzeige und Steuerung verbunden.
- - 5. Unter PROGRAM SELECT mit den "+" und "-" Knöpfen (folgend "Statusknöpfe" genannt) den Modus "Lithium BATT" auswählen und mit "Enter" bestätigen.
- - 6. In dem dann angezeigten Menü mit den "Statusknöpfen" den Modus "Balance CHG" auswählen und mit "Enter" bestätigen. (Dies wird in der ersten Zeile des entsprechendes LCDs angezeigt).
- - 7. Nun blinkt die Batterie Bezeichnung. Hier "LiPo" auswählen und bestätigen.
- - 8. Jetzt blinkt die Batterieladestromanzeige. Hier "5.0A" auswählen und dann "Enter" 3 Sekunden lang gedrückt halten. Es wird die Batterie überprüft.
- - 9. In der nun dargestellten Anzeige wird der Aufbau des Akkus erkannt und angezeigt. Noch einmal "Enter" drücken startet den Ladeprozess.
- - 10. Wenn der Akku voll (oder nahe zu voll) geladen ist, sinkt der Ladestrom (angezeigt auf dem LCD oben mittig). Durch das Drücken des "Stop" Knopfes wir der Ladevorgang beendet.
- - 11. Der Akku kann dann von der Ladestation entfernt werden. Die Ladestation kann ausgemacht und der Netzstecker ausgesteckt werden.
+
+1. Das Versorgungskabel des Akkus mit dem der Ladestation verbinden (auf dem Bild oben; das dickere Kabel, oben rechts).
+2. Das Informationskabel des Akkus mit dem HX-Adapter Sockel "4S" verbinden (auf dem Bild oben; das 5-adrige Kabel, unten links).
+3. Netzstecker der Ladestation einstecken und die Ladestation (auf der Rückseite) einschalten.
+4. Für die weiteren Anweisungen ist hier zu beachten: die beiden linken Anschlüsse, an der Vorderseite der Ladestation, ist mit der oberen Anzeige und Steuerung verbunden. Die rechten Anschlüsse sind mit der unteren Anzeige und Steuerung verbunden.
+5. Unter PROGRAM SELECT mit den "+" und "-" Knöpfen (folgend "Statusknöpfe" genannt) den Modus "Lithium BATT" auswählen und mit "Enter" bestätigen.
+6. In dem dann angezeigten Menü mit den "Statusknöpfen" den Modus "Balance CHG" auswählen und mit "Enter" bestätigen. (Dies wird in der ersten Zeile des entsprechendes LCDs angezeigt).
+7. Nun blinkt die Batterie Bezeichnung. Hier "LiPo" auswählen und bestätigen.
+8. Jetzt blinkt die Batterieladestromanzeige. Hier "5.0A" auswählen und dann "Enter" 3 Sekunden lang gedrückt halten. Es wird die Batterie überprüft.
+9. In der nun dargestellten Anzeige wird der Aufbau des Akkus erkannt und angezeigt. Noch einmal "Enter" drücken startet den Ladeprozess.
+10. Wenn der Akku voll (oder nahe zu voll) geladen ist, sinkt der Ladestrom (angezeigt auf dem LCD oben mittig). Durch das Drücken des "Stop" Knopfes wir der Ladevorgang beendet.
+11. Der Akku kann dann von der Ladestation entfernt werden. Die Ladestation kann ausgemacht und der Netzstecker ausgesteckt werden.
 
 ## Probleme mit den Akkus
 
