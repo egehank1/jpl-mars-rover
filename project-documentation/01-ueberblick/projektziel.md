@@ -2,7 +2,7 @@
 
 Die ursprüngliche Projektidee des Projekts **IP-Mars-Rover** war es, einen **modellbasierten Entwicklungsprozess** für einen Rover zu untersuchen.
 
-Konkret sollte ein **kleiner, abgegrenzter Teil der Rover-Logik** in **Autofocus 3** modelliert werden.
+Konkret sollte ein **kleiner, abgegrenzter Teil der Rover** in **Autofocus 3** modelliert werden.
 
 Der geplante Ablauf umfasste folgende Schritte:
 
