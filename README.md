@@ -17,7 +17,7 @@ Um den Respberry Pi des Rovers über SSH anzusteuern, muss ein Hotspot mit den f
 ## Controller an den Pi Anschließen
 Als nächstes wird ein Controller über die USB Schnittstellen des Pis angeschlossen.   
 Bisher wurde dafür ein **XBox 360 Controller** dafür verwendet.      
-- Soll ein anderer Controller verwedet werden und unerwartet die Bewegung nicht mehr wie beschrieben funktionieren, kann die [Tastenbelegung](https://github.com/MikaBabel/IP-Marsrover/tree/main?tab=readme-ov-file#controller-belegung) angepasst werden.
+- Soll ein anderer Controller verwedet werden und unerwartet die Bewegung nicht mehr wie beschrieben funktionieren, kann die [Tastenbelegung](./README.md?ref_type=heads&plain=0#controller-belegung) angepasst werden.
       
 
 ## SSH Verbindung zum Rover
@@ -40,14 +40,14 @@ Nach erfolgreicher Erstanmeldung dann über:
       ssh rover@marsrover
       Passwort: mars
 ## Rover steuern
-Nach Befolgen dieser Schritten kann der Rover mit dem Controller gesteuert werden. Siehe hierfür [Tastenbelegung](https://github.com/MikaBabel/IP-Marsrover/tree/main?tab=readme-ov-file#tastenbelegung-controller)
+Nach Befolgen dieser Schritten kann der Rover mit dem Controller gesteuert werden. Siehe hierfür [Tastenbelegung](./README.md?ref_type=heads&plain=0#controller-belegung)
 
 # Einstieg in das Projekt
 Dieser Abschnitt soll ein Versändnis und Einstiegspunkt für weitere Gruppen bieten.
 Der Abschnitt beschreibt den Bearbeitungsgrad dieser Tutorials   
 
 ### Pi Setup
-Die [vorgegeben Arbeitsschritte](https://github.com/MikaBabel/IP-Marsrover/tree/main/src/osr-rover-code) "**Raspberry Pi setup**" sowie "**Rover code bringup**" wurden vollständig abgeschlossen, manche Probleme sind dabei offen geblieben, die am Ende dieser Doku unter [Problemen](https://github.com/MikaBabel/IP-Marsrover/blob/main/README.md#probleme) aufgelistet wurden.     
+Die [vorgegeben Arbeitsschritte](./src/osr-rover-code) "**Raspberry Pi setup**" sowie "**Rover code bringup**" wurden vollständig abgeschlossen, manche Probleme sind dabei offen geblieben, die am Ende dieser Doku unter [Problemen](./README.md?ref_type=heads&plain=0#probleme) aufgelistet wurden.     
 Auf dem Pi wurde **Ubuntu Jammy (22.04.5 LTS)** installiert, sowie **ROS2 Humble**   
 Innerhalb der Schritte wurden ausßerdem folgende Punkte bearbeitet:
 
@@ -92,7 +92,7 @@ Hierbei kann man auch die Richtung der Motoren einstellen, z.B. falls sich ein M
 
 ## Controller Belegung
 Jeder Button/Axe auf dem Controller kann verwendet werden um eine der oben gennanten Funktionen bei der Tastenbelegung annzunehmen.
-Dies wird in der Datei [osr_launch.py](https://github.com/MikaBabel/IP-Marsrover/blob/main/src/osr-rover-code/ROS/osr_bringup/launch/osr_launch.py) eingestellt.
+Dies wird in der Datei [osr_launch.py](./src/osr-rover-code/ROS/osr_bringup/launch/osr_launch.py) eingestellt.
 
 | Axes     | Ort an Controller  |
 |:-------------|:-------------:|
@@ -123,7 +123,7 @@ Die Simulation befindet sich unter /ROS/osr_gazebo
 Dort findet man diese Dokumentation auch nochmal in einer separaten README
 # WSL
 Wenn ihr Windows benutzt, müsst ihr WSL nutzen, um mit der Simulation arbeiten zu können. Das geht ganz einfach: Im Microsoft Store nach "Ubuntu 22.04.5 LTS" suchen und installieren. Es MUSS die Version 22.04.5 LTS sein. 
-![Ubuntu](https://github.com/MikaBabel/IP-Marsrover/blob/main/Assets/Ubuntu%20Version.png)
+![Ubuntu](./Assets/Ubuntu%20Version.png)
 
 Die alternative ist, eine VM mit dieser Ubuntu Version zu nutzen 
 # Installieren
@@ -186,14 +186,14 @@ Um zu verstehen, wie ros funktioniert, empfehlen wir folgende Quellen durchzugeh
 Sensoren die man hinzufügen möchte, werden im gazebo.urdf.xacro file definiert. Dieses File wird dann vom osr.urdf.xarco file, dass den Rover definiert, importiert.
 ## Lidar Sensor 
 Der Lidar Sensor liefert seine Daten über das Topic "/lidar_plugin/out". Hier im Bild sieht man die Visualisierung der Daten einer Wand über Rviz
-![Ubuntu](https://github.com/MikaBabel/IP-Marsrover/blob/main/Assets/Lidar%20Rviz.png)
+![Ubuntu](./Lidar%20Rviz.png)
 
 
 
 
 ## Ultraschallsensoren
 Ultraschallsensoren werden offiziell nicht unterstützt. Deshalb haben wir hier einen Workaround gewählt: Einen Lidar-Sensor, der eine Message vom Typ "Range" veröffentlicht. Diesen Datentyp würde ein normaler Ultraschallsensor auch liefern. 
-![Ubuntu](https://github.com/MikaBabel/IP-Marsrover/blob/main/Assets/Ultraschall%20Rviz.png)
+![Ubuntu](./Assets/Ultraschall%20Rviz.png)
 
 Der Blaue cone visualisiert den Ultraschallsensor
 
@@ -357,7 +357,7 @@ sudo apt update
 
 ## Probleme bei Rover Setup
 ### Kaputte Akkus
-Alle Akkus bis auf den markierten (schwarzer Kabelbinder), sind defekt. Um dies zu verhindern bitte Akku immer wie [hier angegeben](https://github.com/MikaBabel/IP-Marsrover/blob/main/hardware/doku/Akkus/readme.md) laden.
+Alle Akkus bis auf den markierten (schwarzer Kabelbinder), sind defekt. Um dies zu verhindern bitte Akku immer wie [hier angegeben](./hardware/doku/Akkus/readme.md) laden.
 ### Servo Hardware Fehler
 Servo vorne links hat Probleme zuverlässig die Winkel auszuführen, manchmal führt er die Einlenkung nicht vollständig aus.
 
