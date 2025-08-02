@@ -8,7 +8,7 @@ Um den Respberry Pi des Rovers über SSH anzusteuern, muss ein Hotspot mit den f
   - Um die **IP Addresse des Pis** für die erste SSH Verbindung zu erhalten, kann dies jedoch ein **Hotspot über Windows** liefern.
 
 ## PowerUp Rover
-1. Akku Einlegen und Anschließen. Dabei haben wir den **funktionierenden Akku** mit einem **schwarzen Kabelbinder markiert**.
+1. Akku einlegen und anschließen. Dabei haben wir den **funktionierenden Akku** mit einem **schwarzen Kabelbinder markiert**.
 2. Schalter an der Rückseite des Rovers nach oben Umlegen.
       - Das Display auf der Rckseite sollte aufleuchten und **mindestens ~11V** anzeigen.
       - Die LEDS des Brainboads sollten nun auch die 5V bestätigen.
