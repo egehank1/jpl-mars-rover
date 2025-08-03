@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>af3_ultrasound</name>
+  <version>0.0.1</version>
+  <description>AF3-based ultrasound sensor logic for MarsRover</description>
+
+  <maintainer email="enis.cobanoglu@alumni.fh-aachen.de">Enis Cobanoglu</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+
+  <export>
+  </export>
+</package>
