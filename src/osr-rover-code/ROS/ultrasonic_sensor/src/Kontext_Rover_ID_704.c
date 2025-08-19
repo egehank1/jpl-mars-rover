@@ -6,7 +6,7 @@ GEN_TYPE_boolean TooClose_ID_712;
 GEN_TYPE_boolean noval_TooClose_ID_712;
 
 void clear_inputs_Kontext_Rover_ID_704(){
-	noval_TooClose_ID_712 = true;
+	noval_TooClose_ID_712 = GEN_TRUE;
 }
 
 void clear_outputs_Kontext_Rover_ID_704(){
