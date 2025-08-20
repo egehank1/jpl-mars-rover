@@ -38,15 +38,15 @@ static GEN_TYPE_boolean fire_state_Timer6Start_ID_448();
 static GEN_TYPE_boolean fire_state_StopTimer6_ID_461();
 
 void clear_inputs_TriggerFunk_ID_427(){
-	noval_timeoutMessung_ID_589 = true;
+	noval_timeoutMessung_ID_589 = GEN_TRUE;
 }
 
 void clear_outputs_TriggerFunk_ID_427(){
-	noval_Impuls_Signal_ID_690 = true;
+	noval_Impuls_Signal_ID_690 = GEN_TRUE;
 }
 
 void init_TriggerFunk_ID_427(){
-	noval_Impuls_Signal_ID_690 = true;
+	noval_Impuls_Signal_ID_690 = GEN_TRUE;
 	current_state = 443;
 	i = 20;
 	scratch_paper_i = 20;
@@ -80,62 +80,62 @@ static void copy_scratch_paper(){
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_453(){
 	if (true) {
 		current_state = 448;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_466(){
-	if (noval_timeoutMessung_ID_589 == false && timeoutMessung_ID_589 == true) {
-		noval_Impuls_Signal_ID_690 = false;
-		Impuls_Signal_ID_690 = true;
+	if (noval_timeoutMessung_ID_589 == GEN_FALSE && timeoutMessung_ID_589 == GEN_TRUE) {
+		noval_Impuls_Signal_ID_690 = GEN_FALSE;
+		Impuls_Signal_ID_690 = GEN_TRUE;
 		
 		current_state = 461;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_514(){
-	if (noval_timeoutMessung_ID_589 == false && timeoutMessung_ID_589 == false) {
-		noval_Impuls_Signal_ID_690 = false;
-		Impuls_Signal_ID_690 = false;
+	if (noval_timeoutMessung_ID_589 == GEN_FALSE && timeoutMessung_ID_589 == GEN_FALSE) {
+		noval_Impuls_Signal_ID_690 = GEN_FALSE;
+		Impuls_Signal_ID_690 = GEN_FALSE;
 		
 		current_state = 448;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_795(){
-	if (!(noval_timeoutMessung_ID_589 == false && timeoutMessung_ID_589 == false)) {
-		noval_Impuls_Signal_ID_690 = false;
-		Impuls_Signal_ID_690 = true;
+	if (!(noval_timeoutMessung_ID_589 == GEN_FALSE && timeoutMessung_ID_589 == GEN_FALSE)) {
+		noval_Impuls_Signal_ID_690 = GEN_FALSE;
+		Impuls_Signal_ID_690 = GEN_TRUE;
 		
 		current_state = 461;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_801(){
-	if (!(noval_timeoutMessung_ID_589 == false && timeoutMessung_ID_589 == true)) {
-		noval_Impuls_Signal_ID_690 = false;
-		Impuls_Signal_ID_690 = false;
+	if (!(noval_timeoutMessung_ID_589 == GEN_FALSE && timeoutMessung_ID_589 == GEN_TRUE)) {
+		noval_Impuls_Signal_ID_690 = GEN_FALSE;
+		Impuls_Signal_ID_690 = GEN_FALSE;
 		
 		current_state = 448;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
@@ -149,9 +149,9 @@ static GEN_TYPE_boolean fire_state_Timer6Start_ID_448(){
 
 static GEN_TYPE_boolean fire_state_StopTimer6_ID_461(){
 	if (!(fire_transition_Transition_Segment_ID_514() || fire_transition_Transition_Segment_ID_795())) {
-		noval_Impuls_Signal_ID_690 = false;
-		Impuls_Signal_ID_690 = true;
+		noval_Impuls_Signal_ID_690 = GEN_FALSE;
+		Impuls_Signal_ID_690 = GEN_TRUE;
 		
 	}
-	return true;
+	return GEN_TRUE;
 }
