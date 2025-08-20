@@ -45,11 +45,11 @@ void clear_inputs_Timer10_ID_579(){
 }
 
 void clear_outputs_Timer10_ID_579(){
-	noval_timeoutMessung_ID_587 = true;
+	noval_timeoutMessung_ID_587 = GEN_TRUE;
 }
 
 void init_Timer10_ID_579(){
-	noval_timeoutMessung_ID_587 = true;
+	noval_timeoutMessung_ID_587 = GEN_TRUE;
 	current_state = 727;
 	i = 0;
 	scratch_paper_i = 0;
@@ -89,70 +89,70 @@ static void copy_scratch_paper(){
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_735(){
 	if (true) {
 		scratch_paper_v2 = 0;
-		noval_timeoutMessung_ID_587 = false;
-		timeoutMessung_ID_587 = true;
+		noval_timeoutMessung_ID_587 = GEN_FALSE;
+		timeoutMessung_ID_587 = GEN_TRUE;
 		
 		current_state = 730;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_739(){
 	if (true) {
 		scratch_paper_v2 = v2 + 1;
-		noval_timeoutMessung_ID_587 = false;
-		timeoutMessung_ID_587 = true;
+		noval_timeoutMessung_ID_587 = GEN_FALSE;
+		timeoutMessung_ID_587 = GEN_TRUE;
 		
 		current_state = 730;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_746(){
 	if (v2 == 100) {
-		noval_timeoutMessung_ID_587 = false;
-		timeoutMessung_ID_587 = false;
+		noval_timeoutMessung_ID_587 = GEN_FALSE;
+		timeoutMessung_ID_587 = GEN_FALSE;
 		
 		scratch_paper_v2 = 0;
 		current_state = 742;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_750(){
 	if (v4 == 100) {
-		noval_timeoutMessung_ID_587 = false;
-		timeoutMessung_ID_587 = true;
+		noval_timeoutMessung_ID_587 = GEN_FALSE;
+		timeoutMessung_ID_587 = GEN_TRUE;
 		
 		scratch_paper_v4 = 0;
 		current_state = 730;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_758(){
 	if (true) {
 		scratch_paper_v4 = v4 + 1;
-		noval_timeoutMessung_ID_587 = false;
-		timeoutMessung_ID_587 = false;
+		noval_timeoutMessung_ID_587 = GEN_FALSE;
+		timeoutMessung_ID_587 = GEN_FALSE;
 		
 		current_state = 742;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
@@ -166,9 +166,9 @@ static GEN_TYPE_boolean fire_state_Conter_Timer_10_ID_730(){
 
 static GEN_TYPE_boolean fire_state_State_ID_742(){
 	if (!(fire_transition_Transition_Segment_ID_750() || fire_transition_Transition_Segment_ID_758())) {
-		noval_timeoutMessung_ID_587 = false;
-		timeoutMessung_ID_587 = false;
+		noval_timeoutMessung_ID_587 = GEN_FALSE;
+		timeoutMessung_ID_587 = GEN_FALSE;
 		
 	}
-	return true;
+	return GEN_TRUE;
 }
