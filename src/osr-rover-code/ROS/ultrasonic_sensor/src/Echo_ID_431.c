@@ -44,16 +44,16 @@ static GEN_TYPE_boolean fire_state_Init_ID_518();
 static GEN_TYPE_boolean fire_state_Waiting_ID_523();
 
 void clear_inputs_Echo_ID_431(){
-	noval_Impuls_Signal_ID_508 = true;
-	noval_Echo_Signal_ID_563 = true;
+	noval_Impuls_Signal_ID_508 = GEN_TRUE;
+	noval_Echo_Signal_ID_563 = GEN_TRUE;
 }
 
 void clear_outputs_Echo_ID_431(){
-	noval_TooClose_ID_699 = true;
+	noval_TooClose_ID_699 = GEN_TRUE;
 }
 
 void init_Echo_ID_431(){
-	noval_TooClose_ID_699 = true;
+	noval_TooClose_ID_699 = GEN_TRUE;
 	current_state = 518;
 	echozeit = 0;
 	scratch_paper_echozeit = 0;
@@ -93,7 +93,7 @@ static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_528(){
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_684(){
-	if (!(noval_Echo_Signal_ID_563 == false && Echo_Signal_ID_563 == true)) {
+	if (!(noval_Echo_Signal_ID_563 == GEN_FALSE && Echo_Signal_ID_563 == GEN_TRUE)) {
 		scratch_paper_echozeit = echozeit + 1;
 		current_state = 523;
 		return true;
@@ -104,39 +104,39 @@ static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_684(){
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_813(){
-	if ((!(noval_Echo_Signal_ID_563 == true) && (noval_Echo_Signal_ID_563 == false && Echo_Signal_ID_563 == true)) && (noval_Impuls_Signal_ID_508 == false && Impuls_Signal_ID_508 == true)) {
+	if ((!(noval_Echo_Signal_ID_563 == GEN_TRUE) && (noval_Echo_Signal_ID_563 == GEN_FALSE && Echo_Signal_ID_563 == GEN_TRUE)) && (noval_Impuls_Signal_ID_508 == GEN_FALSE && Impuls_Signal_ID_508 == GEN_TRUE)) {
 		scratch_paper_distance = (echozeit * 3.43) * 0.5;
 		current_state = 523;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_817(){
 	if (distance != 0.0 && distance < 20.0) {
-		noval_TooClose_ID_699 = false;
-		TooClose_ID_699 = true;
+		noval_TooClose_ID_699 = GEN_FALSE;
+		TooClose_ID_699 = GEN_TRUE;
 		
 		current_state = 523;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
 static GEN_TYPE_boolean fire_transition_Transition_Segment_ID_821(){
 	if (distance != 0.0 && distance > 20.0) {
-		noval_TooClose_ID_699 = false;
-		TooClose_ID_699 = false;
+		noval_TooClose_ID_699 = GEN_FALSE;
+		TooClose_ID_699 = GEN_FALSE;
 		
 		current_state = 523;
-		return true;
+		return GEN_TRUE;
 	}
 	else {
-		return false;
+		return GEN_FALSE;
 	}
 }
 
