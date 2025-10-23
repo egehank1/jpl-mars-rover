@@ -201,12 +201,11 @@
         </sensor>
 
     </gazebo>
-    <!-- ───────────── Ultraschall Sensor ───────────── -->
+    <!-- ───────────── Ultraschall Sensor ───────────── 
     <link name="ultrasonic_1_link">
       <pose>0.09 -0.139 0.595 0 0 0</pose>
     </link>
-  
-    <joint name="ultrasonic_1_joint" type="fixed">
+      <joint name="ultrasonic_1_joint" type="fixed">
       <parent link="front_wheel_joint_left"/>   
       <child  link="ultrasonic_1_link"/>
       <origin xyz="0.09 -0.139 0.595" rpy="0 0 0"/>
@@ -251,6 +250,6 @@
           <radiation_type>ultrasound</radiation_type>
         </plugin>
       </sensor>  
-    </gazebo>
+    </gazebo> -->
 
 </robot>
