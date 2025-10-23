@@ -1,0 +1,113 @@
+[0.010s] Invoking command in '/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo
+[0.102s] -- The C compiler identification is GNU 11.4.0
+[0.377s] -- The CXX compiler identification is GNU 11.4.0
+[0.563s] -- Detecting C compiler ABI info
+[0.666s] -- Detecting C compiler ABI info - done
+[0.670s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.670s] -- Detecting C compile features
+[0.670s] -- Detecting C compile features - done
+[0.672s] -- Detecting CXX compiler ABI info
+[0.785s] -- Detecting CXX compiler ABI info - done
+[0.790s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.790s] -- Detecting CXX compile features
+[0.790s] -- Detecting CXX compile features - done
+[0.792s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.894s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.935s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.033s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.036s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.041s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.048s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.057s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.079s] -- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+[1.100s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.101s] -- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.691s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.317s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.465s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.470s] -- Looking for pthread.h
+[3.575s] -- Looking for pthread.h - found
+[3.575s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.680s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.681s] -- Found Threads: TRUE  
+[3.704s] -- Found rclcpp_action: 16.0.15 (/opt/ros/humble/share/rclcpp_action/cmake)
+[3.724s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[3.734s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[3.744s] -- Found tf2_geometry_msgs: 0.25.16 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[3.776s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[3.777s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.777s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[3.817s] -- Found trajectory_msgs: 4.9.0 (/opt/ros/humble/share/trajectory_msgs/cmake)
+[3.828s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.887s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.887s] -- Configured cppcheck include dirs: 
+[3.887s] -- Configured cppcheck exclude dirs and/or files: 
+[3.889s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.891s] -- Added test 'lint_cmake' to check CMake code style
+[3.893s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.902s] -- Added test 'uncrustify' to check C / C++ code style
+[3.902s] -- Configured uncrustify additional arguments: 
+[3.904s] -- Added test 'xmllint' to check XML markup files
+[3.905s] -- Configuring done
+[3.918s] -- Generating done
+[3.922s] -- Build files have been written to: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo
+[3.931s] Invoked command in '/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo
+[3.932s] Invoking command in '/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo -- -j16 -l16
+[3.977s] [ 50%] [32mBuilding CXX object CMakeFiles/osr_controller.dir/src/osr_controller.cpp.o[0m
+[4.229s] In file included from [01m[K/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/src/osr_controller.cpp:13[m[K:
+[4.229s] [01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.h:35:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wcpp-Wcpp]8;;[m[K]
+[4.229s]    35 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_geometry_msgs/tf2_geometry_msgs.hpp instead
+[4.229s]       |  [01;35m[K^~~~~~~[m[K
+[13.720s] [100%] [32m[1mLinking CXX executable osr_controller[0m
+[14.211s] [100%] Built target osr_controller
+[14.221s] Invoked command in '/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo -- -j16 -l16
+[14.230s] Invoking command in '/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo
+[14.236s] -- Install configuration: ""
+[14.236s] -- Execute custom install script
+[14.238s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//launch/empty_world.launch.py
+[14.245s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//launch/nav2_slam.launch.py
+[14.252s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//launch/rviz.launch.py
+[14.259s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//launch/test_world.launch.py
+[14.266s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//config/controller_velocity.yaml
+[14.273s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//config/mapper_params.yaml
+[14.280s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//config/nav2_params.yaml
+[14.287s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//urdf/gazebo.urdf.xacro
+[14.294s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//urdf/insert_transmission.urdf.xacro
+[14.302s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//urdf/osr.urdf.xacro
+[14.310s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/arm.stl
+[14.317s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/body.stl
+[14.324s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/body_axis.stl
+[14.331s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/box_link.stl
+[14.339s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/rocker_bogie_final.stl
+[14.345s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/rocker_bogie_link_front.stl
+[14.353s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/rocker_bogie_link_middle.stl
+[14.360s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/rocker_bogie_link_rear.stl
+[14.367s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/rockerbogie_front_1.stl
+[14.374s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/rockerbogie_middle_1.stl
+[14.382s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/turn_L.stl
+[14.389s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/turn_R.stl
+[14.396s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/turn_left_test.stl
+[14.402s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/turn_right_test.stl
+[14.409s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/wheel.stl
+[14.416s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/wheel_link_left_2.stl
+[14.424s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/wheel_link_right_2.stl
+[14.430s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//meshes/wheel_middle_left.stl
+[14.439s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//rviz/custom_settings.rviz
+[14.446s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo//rviz/rviz_settings.rviz
+[14.455s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/lib/osr_gazebo/osr_controller
+[14.463s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/ament_index/resource_index/package_run_dependencies/osr_gazebo
+[14.470s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/ament_index/resource_index/parent_prefix_path/osr_gazebo
+[14.478s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/environment/ament_prefix_path.sh
+[14.486s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/environment/ament_prefix_path.dsv
+[14.493s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/environment/path.sh
+[14.500s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/environment/path.dsv
+[14.507s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/local_setup.bash
+[14.515s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/local_setup.sh
+[14.521s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/local_setup.zsh
+[14.529s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/local_setup.dsv
+[14.536s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/package.dsv
+[14.545s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/ament_index/resource_index/packages/osr_gazebo
+[14.552s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/cmake/osr_gazeboConfig.cmake
+[14.560s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/cmake/osr_gazeboConfig-version.cmake
+[14.568s] -- Symlinking: /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/share/osr_gazebo/package.xml
+[14.578s] Invoked command in '/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo
