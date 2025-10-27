@@ -187,7 +187,7 @@ nano gazebo.urdf.xacro // Hier an der Überschrift das --> weg machen und unten 
 source /opt/ros/humble/setup.bash
 source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
 ```
-Zum Automatisieren des Sourcen bei jedem Terminal siehe Schritt 7.
+Zum Automatisieren des Sourcens bei jedem neuen Terminal siehe Schritt 7.
 
 WICHTIG: jeden Launch- bzw. Run-Befehl in einem neuen Terminal starten (Und, wenn noch nicht Schritt 7 erledigt wurde, jedes Mal sourcen!)
 ```bash
@@ -201,7 +201,7 @@ Damit nicht bei jedem neuen Terminal das Sourcen selbst ausgeführt werden muss:
 ```bash
 nano .bashrc
 ```
-In der Datei bis ganz unten scrollen und Folgendes eingeben:
+In der Datei bis ganz unten scrollen und Folgendes hinzufügen:
 ```bash
 source /opt/ros/humble/setup.bash
 source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
@@ -211,6 +211,8 @@ alias gazebo="ros2 launch osr_gazebo test_world.launch.py"
 alias rviz="ros2 launch osr_gazebo rviz.launch.py"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```
+Anschließend mit Strg + O abspeichern.
+
 # WSL-Images exportieren und importieren:
 Zur Sicherung und Übertragung von WSL-Installationen bietet es sich an, diese als .tar zu exportieren. Es handelt sich hierbei um einen 1:1 Klon der jeweiligen Umgebung. Dies kann zum Austausch zwischen den verschiedenen Nutzern oder bei Problemen bei der Installation verwendet werden.
 
@@ -232,7 +234,7 @@ wsl --unregister Ubuntu-22.04
 ```
 Wir haben ein entsprechendes Image unter https://fh-aachen.sciebo.de/s/tziQDgpgJ9RR6oH bereitgestellt, dieses ist auf dem Stand vom 23.10.2025, neue Änderungen müssen somit aus Git gepullt werden.
 
-Nach dem Import ist man standardmäßig als root angemeldet, um dies zu ändern: (in diesem Image heißt der gewünschte User ip_m mit dem Passwort ip_m)
+Nach dem Import ist man standardmäßig als root angemeldet, um dies zu ändern: (In diesem Image heißt der gewünschte User ip_m mit dem Passwort ip_m)
 ```bash
 wsl
 printf "[user]\ndefault=ip_m\n" > /etc/wsl.conf
