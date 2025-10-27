@@ -4,7 +4,7 @@ Durch diesen Abschnitt wird die Inbetriebnahme des Rovers und die dazu nötigen 
 Um den Respberry Pi des Rovers über SSH anzusteuern, muss ein Hotspot mit den folgenden Daten erstellt werden:
       SSID/Name: MarsNet
       Passwort: MarsRover
-  - Während unserer Arbeit hat es sich als satbiler erwiesen, den **Hotspot über ein seperates Samrtphone** statt den Cleint Rechner zu öffnen.   
+  - Während unserer Arbeit hat es sich als stabiler erwiesen, den **Hotspot über ein seperates Samrtphone** statt den Cleint Rechner zu öffnen.   
   - Um die **IP Addresse des Pis** für die erste SSH Verbindung zu erhalten, kann dies jedoch ein **Hotspot über Windows** liefern.
 
 ## PowerUp Rover
