@@ -127,23 +127,85 @@ Wenn ihr Windows benutzt, müsst ihr WSL nutzen, um mit der Simulation arbeiten 
 
 Die alternative ist, eine VM mit dieser Ubuntu Version zu nutzen 
 # Installieren
+1. ROS Humble installieren:
+$ sudo apt update && sudo apt install locales
+$ sudo locale-gen en_US en_US.UTF-8
+$ sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+$ export LANG=en_US.UTF-8
 
-1. ROS2 Humble installieren: https://docs.ros.org/en/humble/Installation.html
-2. ROS2 Packages Installieren: https://github.com/nasa-jpl/osr-rover-code/tree/master/ROS/osr_gazebo#ros-package-installation
-3. Dieses Repository in das Homeverzeichnis eures Accounts klonen
-4. im osr_gazebo Ordner den Befehl "colcon build --symlink-install" ausführen. Durch die Option symlink-install wird immer automatisch gebaut, wenn ihr Änderungen im code vornehmt. Damit die Änderungen in kraft treten, müsst ihr die betroffenen Nodes neu starten. WICHTIG: colcon build muss in osr_gazebo ausgeführt werden, nicht in einem Unterordner!!!
-5. Sourcen der Files (Erklärung unter "Sourcing") 
-```bash
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository universe
+
+$ sudo apt update && sudo apt install curl -y
+$ export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+$ curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
+$ sudo dpkg -i /tmp/ros2-apt-source.deb
+
+$ sudo apt update
+$ sudo apt upgrade
+
+$ sudo apt install ros-humble-desktop
+$ sudo apt install ros-humble-ros-base
+$ sudo apt install ros-dev-tools
+
+$ source /opt/ros/humble/setup.bash
+
+2. ROS2 Packages installieren
+$sudo apt install python3-colcon-common-extensions
+$sudo apt-get install ros-humble-rviz2
+$sudo apt-get install ros-humble-controller-manager
+$sudo apt-get install ros-humble-robot-state-publisher
+$sudo apt-get install ros-humble-joint-state-publisher
+$sudo apt-get install ros-humble-joint-state-publisher-gui 
+$sudo apt-get install ros-humble-gazebo-ros-pkgs
+$sudo apt-get install ros-humble-trajectory-msgs
+$sudo apt-get install ros-humble-velocity-controllers
+$sudo apt-get install ros-humble-joint-trajectory-controller
+$sudo apt-get install ros-humble-gazebo-ros2-control-demos
+
+$ source /opt/ros/humble/setup.bash
+
+3. Git Repo in das Homeverzeichnis des Accounts clonen 
+$ cd /home/<accountname>
+$ git clone https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25.git
+
+4. Symlink builden (WICHTIG: Im Gazebo Ordner)
+$ cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo
+$ colcon build --symlink-install
+
+5. Ultraschallsensor auskommentieren um Simulation starten zu können (wird im Verlaufe gefixt)
+$ cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/urdf
+$ nano gazebo.urdf.xacro // Hier an der Überschrift das --> weg machen und unten hinter </gazebo> das --> anfügen
+
+6. Sorucen und Starten
+$ source /opt/ros/humble/setup.bash
+$ source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
+//Zum Automatisieren des Sourcen bei jedem Terminal siehe Schritt 7
+
+//Wichtig jeden Befehl in einem neuen Terminal starten (und zuvor wenn nicht Schritt 7 gemacht wird jedes mal sourcen !)
+$ ros2 launch osr_gazebo test_world.launch.py
+$ ros2 run teleop_twist_keyboard teleop_twist_keyboard
+$ ros2 launch osr_gazebo rviz.launch.py
+
+7. Aliase und source automatisieren:
+--> Damit nicht bei jedem neuen Terminal das sourcen ausgeführt werden muss:
+$ nano .bashrc
+
+//Bis unten scrollen und folgendes eingeben:
+
 source /opt/ros/humble/setup.bash
-source ~/osr/ROS/osr_gazebo/install/setup.bash
-```
-6. Gazbeo Simulation und rviz Starten
-```bash
-ros2 launch osr_gazebo empty_world.launch.py
-ros2 launch osr_gazebo rviz.launch.py
-```
+source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
 
+alias osr="cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo"      
+alias gazebo="ros2 launch osr_gazebo test_world.launch.py"
+alias rviz="ros2 launch osr_gazebo rviz.launch.py"
+alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 
+# Verwendete Ressourcen:
+1. ROS2 Humble: https://docs.ros.org/en/humble/Installation.html
+2. ROS2 Packages: https://github.com/nasa-jpl/osr-rover-code/tree/master/ROS/osr_gazebo#ros-package-installation
+
+```
 Wichtig: Im offiziellen Repo exisitiert eine COLCON_IGNORE Datei. Diese Datei verhindert, dass das Package gebaut wird. Dieses File muss gelöscht werden. In diesem Repo exisitert es nicht mehr.
 
 Wenn es Unklarheiten gibt, stehen die Instruktionen auch nochmal im offiziellen Repo: https://github.com/nasa-jpl/osr-rover-code/tree/master/ROS/osr_gazebo
