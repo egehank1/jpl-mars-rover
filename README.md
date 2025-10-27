@@ -182,14 +182,14 @@ $ colcon build --symlink-install
 $ cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/urdf
 $ nano gazebo.urdf.xacro // Hier an der Überschrift das --> weg machen und unten hinter </gazebo> das --> anfügen
 ```
-6. Sorucen und Starten
+6. Sourcen und Starten
 ```bash
 $ source /opt/ros/humble/setup.bash
 $ source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
 ```
-//Zum Automatisieren des Sourcen bei jedem Terminal siehe Schritt 7
+Zum Automatisieren des Sourcen bei jedem Terminal siehe Schritt 7.
 
-//Wichtig jeden Befehl in einem neuen Terminal starten (Und zuvor wenn nicht Schritt 7 gemacht wird jedes Mal sourcen!)
+Wichtig jeden Launch- bzw. Run-Befehl in einem neuen Terminal starten (Und, wenn noch nicht Schritt 7 erledigt wurde, jedes Mal sourcen!)
 ```bash
 $ ros2 launch osr_gazebo test_world.launch.py
 $ ros2 run teleop_twist_keyboard teleop_twist_keyboard
@@ -197,11 +197,11 @@ $ ros2 launch osr_gazebo rviz.launch.py
 ```
 
 7. Aliase und Sourcen automatisieren:
---> Damit nicht bei jedem neuen Terminal das Sourcen selbst ausgeführt werden muss:
+Damit nicht bei jedem neuen Terminal das Sourcen selbst ausgeführt werden muss:
 ```bash
 $ nano .bashrc
 ```
-//Bis unten scrollen und folgendes eingeben:
+In der Datei bis ganz unten scrollen und Folgendes eingeben:
 ```bash
 source /opt/ros/humble/setup.bash
 source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
