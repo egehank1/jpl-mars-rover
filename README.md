@@ -122,84 +122,84 @@ Dies wird in der Datei [osr_launch.py](./src/osr-rover-code/ROS/osr_bringup/laun
 Die Simulation befindet sich unter /ROS/osr_gazebo 
 Dort findet man diese Dokumentation auch nochmal in einer separaten README
 # WSL
-Wenn ihr Windows benutzt, müsst ihr WSL nutzen, um mit der Simulation arbeiten zu können. Das geht ganz einfach: Im Microsoft Store nach "Ubuntu 22.04.5 LTS" suchen und installieren. Es MUSS die Version 22.04.5 LTS sein. 
+Wenn ihr Windows verwendet, müsst ihr WSL nutzen, um mit der Simulation arbeiten zu können. Das geht ganz einfach: Im Microsoft Store nach "Ubuntu 22.04.5 LTS" suchen und installieren. Es MUSS die Version 22.04.5 LTS sein. 
 ![Ubuntu](./Assets/Ubuntu%20Version.png)
 
-Die alternative ist, eine VM mit dieser Ubuntu Version zu nutzen 
+Die Alternative wäre, eine VM mit dieser Ubuntu Version zu nutzen, empfohlen wird WSL.
 # Installieren
 1. ROS Humble installieren:
 ```bash
-$ sudo apt update && sudo apt install locales
-$ sudo locale-gen en_US en_US.UTF-8
-$ sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-$ export LANG=en_US.UTF-8
+sudo apt update && sudo apt install locales
+sudo locale-gen en_US en_US.UTF-8
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository universe
+sudo apt install software-properties-common
+sudo add-apt-repository universe
 
-$ sudo apt update && sudo apt install curl -y
-$ export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
-$ curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
-$ sudo dpkg -i /tmp/ros2-apt-source.deb
+sudo apt update && sudo apt install curl -y
+export ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+curl -L -o /tmp/ros2-apt-source.deb "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.$(. /etc/os-release && echo ${UBUNTU_CODENAME:-${VERSION_CODENAME}})_all.deb"
+sudo dpkg -i /tmp/ros2-apt-source.deb
 
-$ sudo apt update
-$ sudo apt upgrade
+sudo apt update
+sudo apt upgrade
 
-$ sudo apt install ros-humble-desktop
-$ sudo apt install ros-humble-ros-base
-$ sudo apt install ros-dev-tools
+sudo apt install ros-humble-desktop
+sudo apt install ros-humble-ros-base
+sudo apt install ros-dev-tools
 
-$ source /opt/ros/humble/setup.bash
+source /opt/ros/humble/setup.bash
 ```
 2. ROS2 Packages installieren
 ```bash
-$sudo apt install python3-colcon-common-extensions
-$sudo apt-get install ros-humble-rviz2
-$sudo apt-get install ros-humble-controller-manager
-$sudo apt-get install ros-humble-robot-state-publisher
-$sudo apt-get install ros-humble-joint-state-publisher
-$sudo apt-get install ros-humble-joint-state-publisher-gui 
-$sudo apt-get install ros-humble-gazebo-ros-pkgs
-$sudo apt-get install ros-humble-trajectory-msgs
-$sudo apt-get install ros-humble-velocity-controllers
-$sudo apt-get install ros-humble-joint-trajectory-controller
-$sudo apt-get install ros-humble-gazebo-ros2-control-demos
+sudo apt install python3-colcon-common-extensions
+sudo apt-get install ros-humble-rviz2
+sudo apt-get install ros-humble-controller-manager
+sudo apt-get install ros-humble-robot-state-publisher
+sudo apt-get install ros-humble-joint-state-publisher
+sudo apt-get install ros-humble-joint-state-publisher-gui 
+sudo apt-get install ros-humble-gazebo-ros-pkgs
+sudo apt-get install ros-humble-trajectory-msgs
+sudo apt-get install ros-humble-velocity-controllers
+sudo apt-get install ros-humble-joint-trajectory-controller
+sudo apt-get install ros-humble-gazebo-ros2-control-demos
 
-$ source /opt/ros/humble/setup.bash
+source /opt/ros/humble/setup.bash
 ```
 3. Git Repo in das Homeverzeichnis des Accounts clonen
 ```bash
-$ cd /home/<accountname>
-$ git clone https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25.git
+cd /home/<accountname>
+git clone https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25.git
 ```
 4. Symlink builden (WICHTIG: Im Gazebo Ordner)
 ```bash
-$ cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo
-$ colcon build --symlink-install
+cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo
+colcon build --symlink-install
 ```
 5. Ultraschallsensor auskommentieren um Simulation starten zu können (wird im Verlaufe gefixt)
 ```bash
-$ cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/urdf
-$ nano gazebo.urdf.xacro // Hier an der Überschrift das --> weg machen und unten hinter </gazebo> das --> anfügen
+cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/urdf
+nano gazebo.urdf.xacro // Hier an der Überschrift das --> weg machen und unten hinter </gazebo> das --> anfügen
 ```
 6. Sourcen und Starten
 ```bash
-$ source /opt/ros/humble/setup.bash
-$ source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
+source /opt/ros/humble/setup.bash
+source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
 ```
 Zum Automatisieren des Sourcen bei jedem Terminal siehe Schritt 7.
 
-Wichtig jeden Launch- bzw. Run-Befehl in einem neuen Terminal starten (Und, wenn noch nicht Schritt 7 erledigt wurde, jedes Mal sourcen!)
+WICHTIG: jeden Launch- bzw. Run-Befehl in einem neuen Terminal starten (Und, wenn noch nicht Schritt 7 erledigt wurde, jedes Mal sourcen!)
 ```bash
-$ ros2 launch osr_gazebo test_world.launch.py
-$ ros2 run teleop_twist_keyboard teleop_twist_keyboard
-$ ros2 launch osr_gazebo rviz.launch.py
+ros2 launch osr_gazebo test_world.launch.py
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+ros2 launch osr_gazebo rviz.launch.py
 ```
 
 7. Aliase und Sourcen automatisieren:
 Damit nicht bei jedem neuen Terminal das Sourcen selbst ausgeführt werden muss:
 ```bash
-$ nano .bashrc
+nano .bashrc
 ```
 In der Datei bis ganz unten scrollen und Folgendes eingeben:
 ```bash
@@ -210,6 +210,34 @@ alias osr="cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo"
 alias gazebo="ros2 launch osr_gazebo test_world.launch.py"
 alias rviz="ros2 launch osr_gazebo rviz.launch.py"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
+```
+# WSL-Images exportieren und importieren:
+Zur Sicherung und Übertragung von WSL-Installationen bietet es sich an, diese als .tar zu exportieren. Es handelt sich hierbei um einen 1:1 Klon der jeweiligen Umgebung. Dies kann zum Austausch zwischen den verschiedenen Nutzern oder bei Problemen bei der Installation verwendet werden.
+
+Liste aller Distributionen anzeigen:
+```bash
+wsl --list --verbose
+```
+Backup exportieren: (Pfade entsprechend anpassen)
+```bash
+wsl --export Ubuntu-22.04 C:\Backups\ubuntu_backup.tar
+```
+Backup importieren: (Pfade entsprechend anpassen)
+```bash
+wsl --import Ubuntu-22.04 C:\WSL\Ubuntu C:\Backups\ubuntu_backup.tar --version 2
+```
+Vorhandene Instanz entfernen: (Pfade entsprechen anpassen)
+```bash
+wsl --unregister Ubuntu-22.04
+```
+Wir haben ein entsprechendes Image unter https://fh-aachen.sciebo.de/s/tziQDgpgJ9RR6oH bereitgestellt, dieses ist auf dem Stand vom 23.10.2025, neue Änderungen müssen somit aus Git gepullt werden.
+
+Nach dem Import ist man standardmäßig als root angemeldet, um dies zu ändern: (in diesem Image heißt der gewünschte User ip_m mit dem Passwort ip_m)
+```bash
+wsl
+printf "[user]\ndefault=ip_m\n" > /etc/wsl.conf
+exit
+wsl --shutdown
 ```
 # Verwendete Ressourcen:
 1. ROS2 Humble: https://docs.ros.org/en/humble/Installation.html
