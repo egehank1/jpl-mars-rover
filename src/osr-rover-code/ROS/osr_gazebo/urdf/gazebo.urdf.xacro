@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 
+<!--	-->
 <robot xmlns:xacro="http://wiki.ros.org/xacro">
-
+	
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
       <plugin>gazebo_ros2_control/GazeboSystem</plugin>
@@ -201,20 +202,21 @@
         </sensor>
 
     </gazebo>
-    <!-- ───────────── Ultraschall Sensor ───────────── 
+    <!-- ───────────── Ultraschall Sensor ───────────── -->
     <link name="ultrasonic_1_link">
       <pose>0.09 -0.139 0.595 0 0 0</pose>
     </link>
       <joint name="ultrasonic_1_joint" type="fixed">
-      <parent link="front_wheel_joint_left"/>   
+      <parent link="front_wheel_link_L"/>
+      <origin xyz="0.10 0.01 -0.16" rpy="0 0 0"/>   
       <child  link="ultrasonic_1_link"/>
-      <origin xyz="0.09 -0.139 0.595" rpy="0 0 0"/>
+      <!-- <origin xyz="0.09 -0.139 0.595" rpy="0 0 0"/> -->
     </joint>
 
     <gazebo reference="ultrasonic_1_link">
       <sensor name="ultrasonic_1" type="ray">
         <always_on>true</always_on>
-        <visualize>false</visualize>
+        <visualize>true</visualize>
         <update_rate>5</update_rate>
         <ray>
           <scan>
@@ -250,6 +252,6 @@
           <radiation_type>ultrasound</radiation_type>
         </plugin>
       </sensor>  
-    </gazebo> -->
-
+    </gazebo>
+	
 </robot>
