@@ -18,7 +18,7 @@ Ziel war es, den vollständigen Weg von der Modellierung bis zur lauffähigen Si
 
 ---
 
-## Finales Projektziel nach 3 Monaten
+## Finales Projektziel
 
 Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und realistisch angepasst:
 
