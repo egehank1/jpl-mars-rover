@@ -1,5 +1,7 @@
 # Umfang und Abgrenzung
 
+## IP Mars Rover – Projektgruppe Autofocus
+
 Dieses Dokument beschreibt den **inhaltlichen und technischen Umfang** des Projekts sowie bewusste **Abgrenzungen**, Entscheidungen und Einschränkungen, die sich aus zeitlichen, technischen und toolbedingten Rahmenbedingungen ergeben haben.
 
 ---
@@ -30,7 +32,7 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
 
 - Es wurde **nicht** mit der regulären Stable-Version von Autofocus 3 gearbeitet
 - Stattdessen wurde gezielt die **Developer-Version** verwendet, da:
-    - benötigte Plugins und der FMI-Adapter dort verfügbar waren
+    - benötigte Plugins und der **FMI-Adapter** dort verfügbar waren
     - Startmechanismen und Plugin-Integration in der Stable-Version eingeschränkt sind
 
 ---
@@ -112,15 +114,15 @@ Wichtige Einschränkungen:
 
 ---
 
-### ROS-Versionen und Adapterkompatibilität
+### ROS-Versionen und Adapter-Kompatibilität
 
 - Es wurde ausschließlich mit **ROS 2** gearbeitet
 - Adapter für **ROS 1** erwiesen sich als inkompatibel und wurden verworfen
 - Es wurden mehrere **ROS-2-Adapter** getestet:
-    - unterschiedliche Build-Systeme (z. B. **Catkin**, **Emmet**)
+    - unterschiedliche Build-Systeme (**catkin** und **ament**)
 - Wichtig:
     - ROS-Version, Adapter und Build-System müssen exakt zusammenpassen
-- Der **ROSC-Adapter** wurde getestet, war jedoch:
+- Der **ROSCO-Adapter** wurde getestet, war jedoch:
     - inkompatibel mit der eingesetzten ROS-2-Version
     - daher nicht weiterverfolgt
 
@@ -131,7 +133,7 @@ Wichtige Einschränkungen:
 Der Projektumfang wurde bewusst **klar begrenzt**, um:
 
 - technische Risiken zu reduzieren
-- den Fokus auf **Automatisierung, FMI/ FMU-Integration und Toolchain-Evaluation** zu legen
+- den Fokus auf **Automatisierung, FMU-/FMI-Integration und Toolchain-Evaluation** zu legen
 - innerhalb der verfügbaren Zeit ein **reproduzierbares Ergebnis** zu erzielen
 
 Bewusst nicht umgesetzte Ansätze sind integraler Bestandteil der Projekterfahrung und sollen zukünftigen Projektgruppen als Orientierung dienen.
