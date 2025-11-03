@@ -252,20 +252,6 @@ Visualization Manager:
       Buffer Length: 1
       Class: rviz_default_plugins/Range
       Color: 0; 85; 255
-      Enabled: false
-      Name: Range
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Reliable
-        Value: /ultrasonic_sensor_front_left/out
-      Value: false
-    - Alpha: 0.5
-      Buffer Length: 1
-      Class: rviz_default_plugins/Range
-      Color: 0; 85; 255
       Enabled: true
       Name: Range
       Topic:
@@ -274,7 +260,8 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /ultrasonic_sensor_middle_left/out
+        Value: /ultrasonic_sensor_fl
+      Use Fixed Frame: true
       Value: true
     - Alpha: 0.5
       Buffer Length: 1
@@ -288,7 +275,35 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /ultrasonic_sensor_front_right/out
+        Value: /ultrasonic_sensor_fr
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz_default_plugins/Range
+      Color: 0; 85; 255
+      Enabled: true
+      Name: Range
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ultrasonic_sensor_rl
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz_default_plugins/Range
+      Color: 0; 85; 255
+      Enabled: true
+      Name: Range
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ultrasonic_sensor_rr
       Value: true
   Enabled: true
   Global Options:

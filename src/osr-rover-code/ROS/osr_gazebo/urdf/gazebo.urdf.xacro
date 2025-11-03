@@ -194,8 +194,7 @@
                 </range>
             </ray>
 
-            <plugin name="lidar_plugin"
-                filename="libgazebo_ros_ray_sensor.so">
+            <plugin name="lidar_plugin" filename="libgazebo_ros_ray_sensor.so">
                 <output_type>sensor_msgs/PointCloud</output_type>
                 <frame_name>lidar_link</frame_name>
             </plugin>
@@ -203,18 +202,32 @@
 
     </gazebo>
     <!-- ───────────── Ultraschall Sensor ───────────── -->
-    <link name="ultrasonic_1_link">
+    <xacro:property name="PI" value="3.141592653589793"/>
+    <xacro:macro name="ultra_sensor" params="id parent_link xyz:='0 0 0' rpy:='0 0 0'">
+    <link name="ultrasonic_${id}_link">
       <pose>0.09 -0.139 0.595 0 0 0</pose>
+	<visual>
+    		<origin xyz="0 0 0" rpy="0 0 0"/>
+    		<geometry>
+      			<cylinder radius="0.015" length="0.05"/>
+    		</geometry>
+    		<material name="blue"/>
+  	</visual>
+  	<collision>
+    		<origin xyz="0 0 0" rpy="0 0 0"/>
+    		<geometry>
+      			<cylinder radius="0.015" length="0.05"/>
+    		</geometry>
+  	</collision>
     </link>
-      <joint name="ultrasonic_1_joint" type="fixed">
-      <parent link="front_wheel_link_L"/>
-      <origin xyz="0.10 0.01 -0.16" rpy="0 0 0"/>   
-      <child  link="ultrasonic_1_link"/>
-      <!-- <origin xyz="0.09 -0.139 0.595" rpy="0 0 0"/> -->
-    </joint>
+      <joint name="ultrasonic_${id}_joint" type="fixed">
+      	<parent link="${parent_link}"/>
+      	<origin xyz="${xyz}" rpy="${rpy}"/>   
+      	<child  link="ultrasonic_${id}_link"/>
+      </joint>
 
-    <gazebo reference="ultrasonic_1_link">
-      <sensor name="ultrasonic_1" type="ray">
+    <gazebo reference="ultrasonic_${id}_link">
+      <sensor name="ultrasonic_${id}" type="ray">
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>5</update_rate>
@@ -223,8 +236,8 @@
             <horizontal>
               <samples>5</samples>
               <resolution>1.0</resolution>
-              <min_angle>-0.12</min_angle>
-              <max_angle>0.12</max_angle>
+              <min_angle>-${7.5 * PI / 180}</min_angle>
+              <max_angle>${7.5 * PI / 180}</max_angle>
             </horizontal>
             <vertical>
               <samples>5</samples>
@@ -235,7 +248,7 @@
           </scan>
           <range>
             <min>0.02</min>
-            <max>1.0</max>
+            <max>4.0</max>
             <resolution>0.01</resolution>
           </range>
           <noise>
@@ -244,14 +257,20 @@
             <stddev>0.01</stddev>
           </noise>
         </ray>
-         <plugin name="ultrasonic_sensor_1" filename="libgazebo_ros_ray_sensor.so">
-          <ros>
-            <remapping>~/out:=ultrasonic_sensor_1</remapping>
-          </ros>
-          <output_type>sensor_msgs/Range</output_type>
-          <radiation_type>ultrasound</radiation_type>
-        </plugin>
+         <plugin name="ultrasonic_sensor_${id}" filename="libgazebo_ros_ray_sensor.so">
+      		<ros>
+        		<remapping>~/out:=/ultrasonic_sensor_${id}</remapping>
+      		</ros>
+      <output_type>sensor_msgs/Range</output_type>
+      <radiation_type>ultrasound</radiation_type>
+      <frame_name>ultrasonic_${id}_link</frame_name> 
+    </plugin>
       </sensor>  
     </gazebo>
-	
+   </xacro:macro>
+	<xacro:ultra_sensor id="fl" parent_link="front_wheel_link_L" xyz="0.10 0.01 -0.16" rpy="0 0 0"/>
+	<xacro:ultra_sensor id="fr" parent_link="front_wheel_link_R" xyz="0.10 0.01 -0.16" rpy="0 0 0"/>
+	<xacro:ultra_sensor id="rl" parent_link="rear_wheel_link_L" xyz="-0.10 0.01 -0.16" rpy="0 0 ${PI}"/>
+	<xacro:ultra_sensor id="rr" parent_link="rear_wheel_link_R" xyz="-0.10 0.01 -0.16" rpy="0 0 ${PI}"/>
+
 </robot>
