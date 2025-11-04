@@ -261,7 +261,7 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /ultrasonic_sensor_fl
-      Use Fixed Frame: true
+      #Use Fixed Frame: true
       Value: true
     - Alpha: 0.5
       Buffer Length: 1
