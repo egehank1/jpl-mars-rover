@@ -10,7 +10,7 @@ Die Projektarbeit erfolgte **iterativ und parallelisiert**.
 
 Alle Teammitglieder arbeiteten auf **eigenen Rechnern** und mit **eigenen Entwicklungsumgebungen**.
 
-Es wurde **nicht** auf zentralen Rechnern (z. B. Temida-Rechnern der FH Aachen) gearbeitet.
+Es wurde **nicht** auf zentralen Rechnern (z. B. Terminal-Rechnern der FH Aachen) gearbeitet.
 
 Der Fokus lag darauf:
 
@@ -172,7 +172,7 @@ Die Projektarbeit erfolgte **iterativ und parallelisiert**.
 
 Alle Teammitglieder arbeiteten auf **eigenen Rechnern** und mit **eigenen Entwicklungsumgebungen**.
 
-Es wurde **nicht** auf zentralen Rechnern (z. B. Temida-Rechnern der FH Aachen) gearbeitet.
+Es wurde **nicht** auf zentralen Rechnern (z. B. Terminal-Rechnern der FH Aachen) gearbeitet.
 
 Der Fokus lag darauf:
 
@@ -319,5 +319,3 @@ Der Entwicklungsprozess war geprägt von:
 - häufigem Austausch und enger Abstimmung
 - vielen Experimenten mit klarer Dokumentation von Fehlschlägen
 - iterativer Annäherung an ein funktionierendes Modell
-
-Durch diesen Ansatz konnte trotz zahlreicher technischer Einschränkungen innerhalb von **zehn Wochen ein testbares Modell** und eine umfassende Dokumentation erarbeitet werden.
