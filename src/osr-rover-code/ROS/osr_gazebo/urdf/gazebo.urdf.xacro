@@ -268,10 +268,10 @@
       </sensor>  
     </gazebo>
    </xacro:macro>
-	<xacro:ultra_sensor id="fl" parent_link="base_link" xyz="0.10 0.01 -0.16" rpy="0 0 0"/>
-	<xacro:ultra_sensor id="fr" parent_link="base_link" xyz="0.10 0.01 -0.16" rpy="0 0 0"/>
-	<xacro:ultra_sensor id="rl" parent_link="base_link" xyz="-0.10 0.01 -0.16" rpy="0 0 ${PI}"/>
-	<xacro:ultra_sensor id="rr" parent_link="base_link" xyz="-0.10 0.01 -0.16" rpy="0 0 ${PI}"/>
+	<xacro:ultra_sensor id="fl" parent_link="front_wheel_link_L" xyz="0.10 0.01 -0.16" rpy="0 0 0"/>
+	<xacro:ultra_sensor id="fr" parent_link="front_wheel_link_R" xyz="0.10 0.01 -0.16" rpy="0 0 0"/>
+	<xacro:ultra_sensor id="rl" parent_link="rear_wheel_link_L" xyz="-0.10 0.01 -0.16" rpy="0 0 ${PI}"/>
+	<xacro:ultra_sensor id="rr" parent_link="rear_wheel_link_R" xyz="-0.10 0.01 -0.16" rpy="0 0 ${PI}"/>
 
 </robot>
 

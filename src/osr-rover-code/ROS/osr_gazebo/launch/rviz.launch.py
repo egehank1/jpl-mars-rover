@@ -9,7 +9,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
   # Set the path to this package.
-  pkg_share = FindPackageShare(package=' osr_gazebo').find('osr_gazebo')
+  pkg_share = FindPackageShare(package='osr_gazebo').find('osr_gazebo')
 
   # Set the path to the RViz configuration settings
   default_rviz_config_path = os.path.join(pkg_share, 'rviz/custom_settings.rviz')
@@ -39,7 +39,7 @@ def generate_launch_description():
     
   declare_use_joint_state_publisher_cmd = DeclareLaunchArgument(
     name='gui',
-    default_value='True',
+    default_value='True',  
     description='Flag to enable joint_state_publisher_gui')
   
   declare_use_robot_state_pub_cmd = DeclareLaunchArgument(
@@ -71,7 +71,8 @@ def generate_launch_description():
     condition=IfCondition(gui),
     package='joint_state_publisher_gui',
     executable='joint_state_publisher_gui',
-    name='joint_state_publisher_gui')
+    name='joint_state_publisher_gui',
+    parameters=[{'use_sim_time': True}])  # <--- wichtig
 
   # Subscribe to the joint states of the robot, and publish the 3D pose of each link.
   start_robot_state_publisher_cmd = Node(
