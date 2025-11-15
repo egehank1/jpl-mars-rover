@@ -4,9 +4,6 @@ Dieses Dokument beschreibt den **inhaltlichen und technischen Umfang** des Proje
 
 ---
 
-<img src="../05-bilder/Picture1.png" width="600">
-
-
 ## Was Teil des Projekts war
 
 Folgende Punkte waren explizit Bestandteil des Projekts:
