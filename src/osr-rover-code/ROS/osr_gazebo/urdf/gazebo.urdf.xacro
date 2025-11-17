@@ -153,6 +153,25 @@
     </gazebo>
     <!-- ───────────── LiDAR Link und Joint ───────────── -->
     <link name="lidar_link">
+        <visual>
+            <origin xyz="-0.13 -0.027 -0.22" rpy="-1.5708 0 0"/>
+            <geometry>
+               <mesh filename="file://$(find osr_gazebo)/meshes/Lidar.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <!-- Standfuß -->
+        <visual>
+            <origin xyz ="-0.12 0 -0.265" rpy="0 0 0"/>
+            <geometry>
+               <box size="0.01 0.01 0.05"/>
+            </geometry>
+            <material name="silver"/>
+        </visual>
+        <collision>
+            <geometry>
+               <cylinder radius="0.05" length="0.1"/>
+            </geometry>
+        </collision>
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <mass value="0.3" />
@@ -203,16 +222,25 @@
     </gazebo>
     <!-- ───────────── Ultraschall Sensor ───────────── -->
     <xacro:property name="PI" value="3.141592653589793"/>
-    <xacro:macro name="ultra_sensor" params="id parent_link xyz:='0 0 0' rpy:='0 0 0'">
+    <xacro:macro name="ultra_sensor" params="id parent_link xyz:='0 0 0' rpy:='0 0 0' vis_x:='0.0' vis_y:='0.0' vis_z:='0.0' b_vis_x:='0.0' b_vis_y:='0.0' b_vis_z:='0.0'">
     <link name="ultrasonic_${id}_link">
       <pose>0.09 -0.139 0.595 0 0 0</pose>
-	<visual>
-    		<origin xyz="0 0 0" rpy="0 0 0"/>
+	<visual> <!-- vorderes Teil -->
+                <!-- Hier NUR das Mesh im Link verschieben/rotieren -->
+    		<origin xyz="${vis_x} ${vis_y} ${vis_z}" rpy="1.5708 ${PI} -1.5708"/>
     		<geometry>
-      			<cylinder radius="0.015" length="0.05"/>
+                        <mesh filename="file://$(find osr_gazebo)/meshes/ultrasonic_front_v6.stl" scale="0.0009 0.0009 0.0009"/>
     		</geometry>
     		<material name="blue"/>
   	</visual>
+	<visual> <!-- Hinteres Teil -->
+                <!-- Hier NUR das Mesh im Link verschieben/rotieren -->
+                <origin xyz="${b_vis_x} ${b_vis_y} ${b_vis_z}" rpy="1.5708 ${PI} 1.5708"/>
+                <geometry>
+                        <mesh filename="file://$(find osr_gazebo)/meshes/ultrasonic_back_v4.stl" scale="0.0009 0.0009 0.0009"/>
+                </geometry>
+                <material name="blue"/>
+        </visual>
   	<collision>
     		<origin xyz="0 0 0" rpy="0 0 0"/>
     		<geometry>
@@ -268,10 +296,10 @@
       </sensor>  
     </gazebo>
    </xacro:macro>
-	<xacro:ultra_sensor id="fl" parent_link="front_wheel_link_L" xyz="0.01 -0.04 0" rpy="0 0.785398 0"/>
-	<xacro:ultra_sensor id="fr" parent_link="front_wheel_link_R" xyz="0.01 0.04 0" rpy="0 0.785398 0"/>
-	<xacro:ultra_sensor id="rl" parent_link="rear_wheel_link_L" xyz="-0.01 -0.04 0" rpy="0 0.785398 ${PI}"/>
-	<xacro:ultra_sensor id="rr" parent_link="rear_wheel_link_R" xyz="-0.01 0.04 0" rpy="0 0.785398 ${PI}"/>
+	<xacro:ultra_sensor id="fl" parent_link="front_wheel_link_L" xyz="0.01 -0.04 -0.01" rpy="0 0.785398 0" vis_x="0.012" vis_y="-0.01" vis_z="0.006" b_vis_x="0" b_vis_y="0.026" b_vis_z="0"/>
+	<xacro:ultra_sensor id="fr" parent_link="front_wheel_link_R" xyz="0.01 0.04 -0.01" rpy="0 0.785398 0" vis_x="0.012" vis_y="-0.03" vis_z="0.006" b_vis_x="0" b_vis_y="0.006" b_vis_z="0"/>
+	<xacro:ultra_sensor id="rl" parent_link="rear_wheel_link_L" xyz="-0.01 -0.04 -0.01" rpy="0 0.785398 ${PI}" vis_x="0.012" vis_y="-0.03" vis_z="0.006" b_vis_x="0" b_vis_y="0.006" b_vis_z="0"/>
+	<xacro:ultra_sensor id="rr" parent_link="rear_wheel_link_R" xyz="-0.01 0.04 -0.01" rpy="0 0.785398 ${PI}" vis_x="0.012" vis_y="-0.01" vis_z="0.006" b_vis_x="0" b_vis_y="0.026" b_vis_z="0"/>
 
 </robot>
 
