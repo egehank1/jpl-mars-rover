@@ -47,19 +47,14 @@ source /opt/ros/humble/setup.bash
 3. Git Repo in das Homeverzeichnis des Accounts clonen
 ```bash
 cd /home/<accountname>
-git clone https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25.git
+git clone https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25.git IP-Marsrover
 ```
 4. Symlink builden (WICHTIG: Im Gazebo Ordner)
 ```bash
 cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo
 colcon build --symlink-install
 ```
-5. Ultraschallsensor auskommentieren um Simulation starten zu können (wird im Verlaufe gefixt)
-```bash
-cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/urdf
-nano gazebo.urdf.xacro // Hier an der Überschrift das --> weg machen und unten hinter </gazebo> das --> anfügen
-```
-6. Sourcen und Starten
+5. Sourcen und Starten
 ```bash
 source /opt/ros/humble/setup.bash
 source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
