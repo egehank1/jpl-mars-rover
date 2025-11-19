@@ -10,11 +10,11 @@ GEN_TYPE_boolean Echo_Signal_ID_542;
 GEN_TYPE_boolean noval_Echo_Signal_ID_542;
 
 void clear_inputs_UltraschalSensor_HW_Componete_ID_435(){
-	noval_Impuls_Signal_ID_665 = true;
+	noval_Impuls_Signal_ID_665 = GEN_TRUE;
 }
 
 void clear_outputs_UltraschalSensor_HW_Componete_ID_435(){
-	noval_Echo_Signal_ID_542 = true;
+	noval_Echo_Signal_ID_542 = GEN_TRUE;
 }
 
 void init_UltraschalSensor_HW_Componete_ID_435(){
