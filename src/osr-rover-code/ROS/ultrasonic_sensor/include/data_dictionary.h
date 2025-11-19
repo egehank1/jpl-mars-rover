@@ -5,7 +5,7 @@
 typedef bool GEN_TYPE_boolean;
 #else
 typedef enum Enum_TYPE_boolean {
-	false = 0, true = 1
+	GEN_FALSE = 0, GEN_TRUE = 1
 } GEN_TYPE_boolean;
 #endif
 
