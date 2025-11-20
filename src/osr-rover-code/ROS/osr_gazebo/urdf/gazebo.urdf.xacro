@@ -154,14 +154,14 @@
     <!-- ───────────── LiDAR Link und Joint ───────────── -->
     <link name="lidar_link">
         <visual>
-            <origin xyz="-0.135 -0.027 -0.215" rpy="-1.5708 0 0"/>
+            <origin xyz="-0.149 -0.027 -0.215" rpy="-1.5708 0 0"/>
             <geometry>
                <mesh filename="file://$(find osr_gazebo)/meshes/Lidar.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </visual>
         <!-- Standfuß -->
         <visual>
-          <origin xyz ="-0.157 0 -0.292" rpy="0 0 -1.5708"/>
+          <origin xyz ="-0.171 0 -0.292" rpy="0 0 -1.5708"/>
           <geometry>
             <mesh filename="file://$(find osr_gazebo)/meshes/Lidar_Tower.stl" scale="1 1 1"/>
           </geometry>
