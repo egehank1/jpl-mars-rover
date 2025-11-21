@@ -24,7 +24,7 @@ Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und rea
 
 > Erstellung eines einfachen, getesteten Modells in Autofocus 3,
 > 
- <img src="../05-bilder/AF3GesamtModellVersuch.png" width="600">
+> <img src="../05-bilder/AF3GesamtModellVersuch.png" width="500">
 > 
 > automatische Generierung von **C-Code**,
 > 
