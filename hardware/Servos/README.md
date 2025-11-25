@@ -1,36 +1,51 @@
-## Servo Bug
+## Bugs in der Ansteuerung der Servos
+Dieses Verzeichnis dokumentiert die Fehlersuche an der Ansteuerung der Servos.
+Das übergeordnete Ziel war es, die Probleme der vorherigen Projektteilnehmer zu beheben.
 
-Date: 23.10.2025
+Speziell zunächst:
 
-Dieses Dokument erklärt, wie durch das`\src\osr-rover-code\scripts\calibrate_servos.py` Script der Winkel des Servos eingestellt wird.
+- Servo vorne links Austauschen
+- Problem mit der Inpace Rotation verstehen und beseitigen, wenn Inplace Drehung gewollt
+- Fixen der Inplace Rotation
 
-Im [Datenblatt](https://www.gobilda.com/2000-series-dual-mode-servo-25-2-torque/#:~:text=Max%20PWM%20Range,500%2D2500%CE%BCsec) findet sich eine PWM-Range (Duty Cycle), welche die Position des Servos abbildet. Hierbei sind 0 bis actuation_range [1] auf die 500-2500μsec Pulsdauer aufgeteilt.
+Da die angegebenen Probleme nicht dokumentiert sind, versuchten wir diese zu reproduzieren und das System zu testen.
 
-Der Sensor benötigt also eine Pulsdauer aus [500;2500] μsec, um korrekt angesteuert zu werden.
-Leider ist das in diesem Script nicht der Fall. Folgendes Verhalten beim Ausführen des Scrips hat sich gezeigt:
+Wir haben die Servos mit dem `rover@marsrover:~/osr_ws/src/osr-rover-code/scripts/calibrate_servos.py` Script getestet und folgendes festgestellt:
 
-Fall 1:
-`(venv) rover@marsrover:~/osr_ws/src/osr-rover-code/scripts$ python calibrate_servos.py 0 0` ergibt eine Pulsdauer von 721,66μs anstatt wie erwartet 500μs
+1. Eingabe von Winkel entspricht nicht der darauf folgenden Umsetzung.
+Bsp: Eine Eingabe von einer Veränderung um 45° enstspricht real einer Veränderung von ca. 30°.
 
-![Fall1_Screenshot](PWM_Servo0_0deg.png)
+2. Bewegungsbug. Servo hat nach Eingabe von bestimmten werten eine seltsame Reaktion.
 
-Fall 2:
-`(venv) rover@marsrover:~/osr_ws/src/osr-rover-code/scripts$ python calibrate_servos.py 0 150` ergibt eine Pulsdauer von 2,16ms
+Replizierung:
+- Winkel von z.b. 140° einstellen (Funktionaler Bereich)
+- Winkel von >189° einstellen, z.b. 190° (Fehlerhafter Bereich)
 
-![Fall1_Screenshot](PWM_Servo0_150deg.png)
+    ->Sollte sich nicht bewegen
+- Winkel von <190° einstellen, z.b. wieder 140°
 
-Fall 3:
-`(venv) rover@marsrover:~/osr_ws/src/osr-rover-code/scripts$ python calibrate_servos.py 0 300` ergibt eine Pulsdauer von 3,61ms anstatt wie erwartet 2500μs
+Egal wo der Servo sich befindet: sobald er einmal eine "fehlerhafte" (Winkel >190°) Stellung als Ziel erhält und danach eine "erreichbare" Lage, wird der Servo erstmal um ungefähr 15° in die falsche Richtung fahren und sich dann zur "erreichbaren" Position bewegen. Ist die Position nach der "fehlerhaften" Position größer als der "Jitter Winkel" (~15°), bewegt sich der Servo in eine Richtung und dann wieder in seine Ausgangsposition (wie eine Art Zucken).
 
-![Fall1_Screenshot](PWM_Servo0_300deg.png)
+Der Signalfluss von Rover bis zum Servo sieht wie folgt aus:
 
-Fall 4:
-`(venv) rover@marsrover:~/osr_ws/src/osr-rover-code/scripts$ python calibrate_servos.py 0 185` ergibt eine Pulsdauer von genau 2,5ms.
+Die ServoWrapper Node ist Subscriber von /cmd_corner und lies Nachrichtentyp CommandCorner (Publisher ist die Rover Node) -> der dort gelesene Winkel wird wie folgt an den PCA9685 gesendet: `ROS/osr_control/osr_control/servo_control.py`: [self.kit.servo[ind].angle = angle # Zeile 77](https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25/-/blob/main/src/osr-rover-code/ROS/osr_control/osr_control/servo_control.py#:~:text=self.kit.servo%5Bind%5D.angle%20%3D%20angle)
 
-![Fall1_Screenshot](PWM_Servo0_185deg.png)
+Der ``@angle.setter`` des Servos übergibt den Wert als "fraction" (Normierung vom Bereich des Winkels auf einen Wert zwischen 0...1)
+-> `adafruit_motor/servo.py: self.fraction = new_angle / self.actuation_range #Zeile 133` 
 
-Die Frage ist nun, was genau das Problem bei der generierung des PWM Signals ist.
-Wir nehmen an, dass es sich um ein Softwareproblem irgendwo im ROS handelt, aber leider haben wir keine Erfahrung mit dem Debugging von ROS.
 
->[1] Zeile 32 in calibrate_servos.py :
->`kit.servo[args.motor_index].actuation_range = 300`
+Der ``@fraction.setter`` des Servos addiert dann den gesetzten Duty Cycle auf den minimalen Duty Cycle.
+Da die Abweichung proportional zur eingestellten Pulsweite ist, liegt der Fehler hier wahrscheinlich nicht. Die duty_range könnte eine Fehlerursache sein.
+->`adafruit_motor/servo.py: duty_cycle = self._min_duty + int(value * self._duty_range) self._pwm_out.duty_cycle = duty_cycle #Zeile 68 + 69` 
+
+-> ``adafruit_servokit.py: servo = adafruit_motor.servo.Servo(self.kit._pca.channels[servo_channel]) # Zeile 154``
+
+Das ServoKit enthält einen `self._servo = _Servo(self)` und einen `self._pca = PCA9685(i2c, address=address, reference_clock_speed=reference_clock_speed)`. Nach meinem Verständnis repräsentiert jeder servo_channel einen PWM Ausgang am PCA9685. In ``adafruit_pca9685 # Ab Zeile 75`` wird der Duty Cycle in Register auf dem Treiberboard geschrieben. Diese Register werden als Endpunkt des Signalflusses betrachtet.
+Hier fortfahren...
+
+
+In ``adafruit_servokit.py # Zeile 60`` lässt sich nachlesen, dass die Clock des PCA9685 kalibriert werden kann. Möglicherweise lässt sich so das Problem des ungenauen DutyCycles lösen.
+
+
+In der Datei [PWM_Analse.md](./PWM_Analyse.md) wird beschrieben, welches Signal vom Treiberboard an den Servo geschickt wird.
+[I2C_Analse.md](./I2C_Analyse.md) beschäftigt sich mit dem Signal, welches vom Raspberry Pi zum PCA9685 gesendet wird.

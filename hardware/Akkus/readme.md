@@ -1,0 +1,57 @@
+# Akkus
+
+Als Akkus verwenden wir HRB LiPo Akkus mit 5000 mAh 14.8v 50C und Deans-T Stecker/T-Plug. 
+
+![Akku](Akku.png)
+
+Gelagert werden diese in einer Feuer- sowie Explosionssicheren Tasche in Schrank II. Der funktionierende Akku wurde mit einem Kabelbinder markiert.
+
+![Akku-Tasche](Feuerfeste_explosionssichere_Lipo_Tasche.jpg)
+
+## Technische Daten
+
+Typ:                     Lithium-Polymer (Li-Po)
+
+Spannung:                14,8 V (4S, 4 Zellen in Serie)
+
+Kapazität:               5000 mAh
+
+Entladestrom (C-Rating): 50C → bis zu 250 A kurzfristig
+
+Steckertyp:              T-Plug
+
+Anwendungszweck:         Versorgung der Motoren, Sensorik und Steuerungseinheiten
+
+## Einsatzort
+
+Der Akku wurde an der Rückseite des Rovers befestigt und ist dort mit dem Power-Board verbunden.
+
+![Akku2](Akku_Einsatzort.jpg)
+
+## Laden der Akkus
+
+An der C240 Duo Ladestation können bis zu zwei Akkus geladen werden. Dabei ist zu beachten, dass die Einstellungen den Spezifikationen des Akkus entsprechen müssen. Das Ladegerät sollte im Balance-Modus sein und die Balance-Stecker sollten angeschlossen sein, wie hier:
+
+![Ladegerät](Ladegerät.jpg)
+
+Folgende Schritte zum Laden des Akkus ausführen:
+
+1. Das Versorgungskabel des Akkus mit dem der Ladestation verbinden (auf dem Bild oben; das dickere Kabel, oben rechts).
+2. Das Informationskabel des Akkus mit dem HX-Adapter Sockel "4S" verbinden (auf dem Bild oben; das 5-adrige Kabel, unten links).
+3. Netzstecker der Ladestation einstecken und die Ladestation (auf der Rückseite) einschalten.
+4. Für die weiteren Anweisungen ist hier zu beachten: die beiden linken Anschlüsse, an der Vorderseite der Ladestation, ist mit der oberen Anzeige und Steuerung verbunden. Die rechten Anschlüsse sind mit der unteren Anzeige und Steuerung verbunden.
+5. Unter PROGRAM SELECT mit den "+" und "-" Knöpfen (folgend "Statusknöpfe" genannt) den Modus "Lithium BATT" auswählen und mit "Enter" bestätigen.
+6. In dem dann angezeigten Menü mit den "Statusknöpfen" den Modus "Balance CHG" auswählen und mit "Enter" bestätigen. (Dies wird in der ersten Zeile des entsprechendes LCDs angezeigt).
+7. Nun blinkt die Batterie Bezeichnung. Hier "LiPo" auswählen und bestätigen.
+8. Jetzt blinkt die Batterieladestromanzeige. Hier "5.0A" auswählen und dann "Enter" 3 Sekunden lang gedrückt halten. Es wird die Batterie überprüft.
+9. In der nun dargestellten Anzeige wird der Aufbau des Akkus erkannt und angezeigt. Noch einmal "Enter" drücken startet den Ladeprozess.
+10. Wenn der Akku voll (oder nahe zu voll) geladen ist, sinkt der Ladestrom (angezeigt auf dem LCD oben mittig). Durch das Drücken des "Stop" Knopfes wir der Ladevorgang beendet.
+11. Der Akku kann dann von der Ladestation entfernt werden. Die Ladestation kann ausgemacht und der Netzstecker ausgesteckt werden.
+
+## Probleme mit den Akkus
+
+Die Akkus vom vergangenen Semester im Schrank gelagert waren, waren z.T. aufgebläht und entladen. Daher empfehlen wir die Akkus weiterhin in der dafür vorgesehenen Tasche zu lagern und bei Zeiten auf Spannung zu prüfen und ggf. erneut zu laden. 
+
+Das Nachkaufen eines HRB LiPo Akkus mit 6000 mAh 14.8V 50C von Amazon hat sich als nicht empfehlenswert herausgestellt, da dieser bei Ankunft entladen war. Wir empfehlen daher eher den Kauf der Akkus von der Original-Webseite von HRB und das sofortige Prüfen der Spannung des Akkus nach dessen Ankunft, um ihn ggf. zu Laden/rechtzeitig zurückschicken zu können.
+
+hrb-power.com
