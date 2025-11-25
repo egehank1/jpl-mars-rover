@@ -32,11 +32,18 @@ Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und rea
 
 
 > anschließende (teil-)automatische Umwandlung in **Python-Code**,
-> 
+>
+> <img src="../05-bilder/export_nur_eine_ebene.png" width="500">
+
 > fehlerfreier Commit und Push des Codes in das Repository
-> 
+>
+> <img src="../05-bilder/componentarchitecture1.png" width="500">
+
 > sowie die erfolgreiche Ausführung und Simulation in einer **ROS-Umgebung mit RViz und Gazebo**.
-> 
+>
+> <img src="../05-bilder/Simulation1.png" width="500">
+> <img src="../05-bilder/Simulation2.png" width="500">
+
 
 Der Fokus lag dabei weniger auf der funktionalen Vollständigkeit des Rover-Modells, sondern auf der **Machbarkeit und Stabilität der verwendeten Toolchain**.
 
