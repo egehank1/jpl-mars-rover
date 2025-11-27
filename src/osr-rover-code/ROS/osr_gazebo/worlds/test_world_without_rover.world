@@ -1,12 +1,42 @@
 <?xml version="1.0" ?>
-<sdf version="1.8">
+<sdf version="1.7">
   <world name="test_world">
 
     <!-- Raum als statisches SDF-Modell -->
-    <include>
-      <uri>file:///home/girskorr/osr/ROS/osr_gazebo/models/room/model.sdf</uri>
+    <!--<include>
+      <uri>file:///home/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/models/room/model.sdf</uri>
       <pose>0 0 0 0 0 0</pose>
+    </include> -->
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
     </include>
+
+    <!-- Test-Box in der Mitte -->
+    <model name="test_box">
+      <pose>0 0 4 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box><size>1 1 1</size></box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
     <!-- Standardplugins etc. -->
+    <plugin name="gazebo_ros_init" filename="libgazebo_ros_init.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so"/>
+    <plugin name="gazebo_ros_clock" filename="libgazebo_ros_clock.so"/>
   </world>
 </sdf>

@@ -1,20 +1,28 @@
 <?xml version="1.0" ?>
-<sdf version="1.8">
+<sdf version="1.7">
   <world name="test_world">
 
     <!-- Raum als statisches SDF-Modell -->
     <include>
-      <uri>file:///home/girskorr/osr/ROS/osr_gazebo/models/room/model.sdf</uri>
+      <uri>file:///home/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/models/room/model.sdf</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
 
     <!-- Rover-Modell -->
     <include>
-      <uri>file:///home/girskorr/osr/ROS/osr_gazebo/urdf/rover.sdf</uri>
+      <uri>file:///home/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/urdf/rover.sdf</uri>
       <name>my_rover</name>
       <pose>0 0 0.1 0 0 1.57</pose>
     </include>
 
     <!-- Standardplugins etc. -->
+    <plugin name="gazebo_ros_init" filename="libgazebo_ros_init.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+    </plugin>
+
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so"/>
+    <plugin name="gazebo_ros_clock" filename="libgazebo_ros_clock.so"/>
   </world>
 </sdf>
