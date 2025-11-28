@@ -73,12 +73,15 @@ Es wurden zwei **Autofocus 3 Developer-Versionen** getestet:
         - Kompilierungsfehler
         - Konfigurationsprobleme
     - **nicht stabil nutzbar**
+<img src="../05-bilder/developerversion1.png" width="500">
+<img src="../05-bilder/developerversion2.png" width="500">
+
 - **Developer-Version 2025 (fortiss-Repository)**
     - funktionierte stabil
     - erforderliche Abhängigkeiten:
         - **Java 21**
         - **Eclipse Temurin 21**
-
+<img src="../05-bilder/developerversion3geschafft.png" width="500">
 **Empfehlung:**
 
 Ausschließlich die **neue Developer-Version (2025)** verwenden.
@@ -100,12 +103,14 @@ Zu Beginn wurde ein **manueller Ansatz** verfolgt, bei dem der von Autofocus erz
 - Probleme mit Autofocus-internen Boolean-Werten:
     - `GEN_TRUE`
     - `GEN_FALSE`
+<img src="../05-bilder/genfalse1.png" width="500">
 
 ### Lösungsversuche
 
 - Umbenennung der Boolean-Werte in:
     - eigene, projektspezifische Variablennamen
 - Vermeidung von Namenskonflikten mit C/C++-Konventionen
+<img src="../05-bilder/componentarchitecture1.png" width="500">
 
 Trotz teilweiser Verbesserungen blieb der manuelle Ansatz:
 
@@ -119,11 +124,12 @@ Daher wurde er **nach kurzer Zeit verworfen**.
 
 ## Automatisierter Ansatz – Adapter & Exporte
 
-### FMO-Export und FME-Adapter
+### FMU-Export und FMI-Adapter
 
-- Es wurde ein **FMO-Export** in Kombination mit einem **FME-Adapter (fortiss)** verwendet
+- Es wurde ein **FMU-Export** in Kombination mit einem **FMI-Adapter (fortiss)** verwendet
 - Voraussetzungen:
     - installierter **GCC-Compiler** (empfohlen: neueste Version)
+<img src="../05-bilder/gccfehlercompilernoetig.png" width="500">
 
 Wichtige Einschränkungen:
 
@@ -131,7 +137,7 @@ Wichtige Einschränkungen:
 - verschachtelte Modelle werden **nicht rekursiv exportiert**
 - Modelle müssen:
     - explizite Inputs und Outputs besitzen
-
+<img src="../05-bilder/export_nur_eine_ebene.png" width="500">
 ---
 
 ### Adapter- und ROS-Kompatibilität
@@ -141,12 +147,14 @@ Wichtige Einschränkungen:
 - Das Projekt nutzt jedoch:
     - **ROS 2**
     - **ament** als Build-System
+<img src="../05-bilder/fmiadapterproblem1.png" width="500">
+<img src="../05-bilder/fmiadapterproblem2.png" width="500">
+
 
 Ergebnis:
 
 - FME-Adapter **inkompatibel**
 - automatisierte Weiterverarbeitung nicht möglich
-
 ---
 
 ### ROSCO-Adapter
@@ -161,6 +169,7 @@ Ergebnis:
 - Versionsinkompatibilität
 - Build- und Laufzeitfehler
 - Adapter nicht weiterverfolgt
+<img src="../05-bilder/rosco_adapter_falsches_ros2_version.png" width="500">
 
 ---
 
