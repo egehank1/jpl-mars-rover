@@ -82,8 +82,8 @@ Es wurden zwei **Autofocus 3 Developer-Versionen** getestet:
         - **Java 21**
         - **Eclipse Temurin 21**
 <img src="../05-bilder/developerversion3geschafft.png" width="500">
-**Empfehlung:**
 
+- **Empfehlung:**
 Ausschließlich die **neue Developer-Version (2025)** verwenden.
 
 ---
