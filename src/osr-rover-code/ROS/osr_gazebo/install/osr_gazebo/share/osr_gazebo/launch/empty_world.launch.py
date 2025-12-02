@@ -1,1 +1,0 @@
-/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/launch/empty_world.launch.py
