@@ -256,8 +256,10 @@ Geht an das Ende der Datei und tragt folgendes ein
 source /opt/ros/humble/setup.bash
 source ~/osr/ROS/osr_gazebo/install/setup.bash
 
-alias osr="cd ~/osr-rover-code/ROS/osr_gazebo"
-alias gazebo="ros2 launch osr_gazebo empty_world.launch.py"
+# Alias für leichtere Bedienung
+alias build='cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo && colcon build --symlink-install && source /opt/ros/h>
+alias osr="cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo"
+alias gazebo="ros2 launch osr_gazebo world.launch.py"
 alias rviz="ros2 launch osr_gazebo rviz.launch.py"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```

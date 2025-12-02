@@ -1,5 +1,20 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
   <model name="room">
+  <!-- In diesem Modell können zusätzliche Objekte hinzugefügt werden, die geladen werden sollen -->
+    <!-- Test-Box in der Mitte
+      <pose>0 2 0 0 1 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box><size>2 2 2</size></box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+          </material>
+        </visual>
+      </link> -->
+    
   </model>
 </sdf>

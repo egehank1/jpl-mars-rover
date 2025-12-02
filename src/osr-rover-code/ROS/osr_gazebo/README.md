@@ -78,8 +78,10 @@ In der Datei bis ganz unten scrollen und Folgendes hinzufügen:
 source /opt/ros/humble/setup.bash
 source ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/install/setup.bash
 
-alias osr="cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo"      
-alias gazebo="ros2 launch osr_gazebo test_world.launch.py"
+# Alias für leichtere Bedienung
+alias build='cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo && colcon build --symlink-install && source /opt/ros/h>
+alias osr="cd ~/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo"
+alias gazebo="ros2 launch osr_gazebo world.launch.py"
 alias rviz="ros2 launch osr_gazebo rviz.launch.py"
 alias teleop="ros2 run teleop_twist_keyboard teleop_twist_keyboard"
 ```
