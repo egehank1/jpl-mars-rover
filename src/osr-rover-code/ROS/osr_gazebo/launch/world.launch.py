@@ -28,7 +28,7 @@ def generate_launch_description():
         default_value=PathJoinSubstitution([
                 osr_share,
                 'worlds',
-                'test_world_with_rover.world'
+                'blank_.world'
         ]),
         description='Pfad zur Gazebo-World-Datei'
     )

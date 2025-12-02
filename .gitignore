@@ -1,4 +1,6 @@
 src/osr-rover-code/ROS/osr_gazebo/build/
-src/osr-rover-code/ROS/osr_gazebo/install/
+src/osr-rover-code/ROS/osr_gazebo/install/*
 src/osr-rover-code/ROS/osr_gazebo/log/
+
+!src/osr-rover-code/ROS/osr_gazebo/install/osr_gazebo/.gitkeep
 

@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo/osr_controller" "TARGETS" "osr_controller" "DESTINATION" "lib/osr_gazebo")

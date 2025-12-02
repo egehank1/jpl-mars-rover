@@ -1,1 +1,0 @@
-/home/ip_m/IP-Marsrover/src/osr-rover-code/ROS/osr_gazebo/build/osr_gazebo/ament_cmake_environment_hooks/local_setup.sh
