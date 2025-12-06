@@ -1,0 +1,20 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+.colcon/
+
+# Ignore sub-builds in src/
+src/*/build/
+src/*/install/
+src/*/log/
+
+# FMI + CMake deps
+**/_deps/
+**/FMILibraryProject*
+**/nlohmann_json*
+
+# VSCode / IDE metadata
+.vscode/
+.idea/
+
