@@ -20,7 +20,7 @@ Ziel war es, den vollständigen Weg von der Modellierung bis zur lauffähigen Si
 
 ## Finales Projektziel
 
-Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und realistisch angepasst:
+Nach der vier- bis fünfmonatigen Projektlaufzeit wurde das Projektziel präzisiert und realistisch angepasst:
 
 > Erstellung eines einfachen, getesteten Modells in Autofocus 3, 
 >
@@ -51,7 +51,7 @@ Der Fokus lag dabei weniger auf der funktionalen Vollständigkeit des Rover-Mode
 
 ## Erfolgskriterien
 
-Das Projekt wurde als erfolgreich bewertet, wenn die folgenden Kriterien erfüllt sind:
+Das Projekt wurde als erfolgreich bewertet, wenn diese folgenden Kriterien erfüllt sind:
 
 - Ein Modell wurde erfolgreich in **Autofocus 3** erstellt und getestet
 - **C-Code konnte automatisch aus Autofocus 3 generiert werden**
