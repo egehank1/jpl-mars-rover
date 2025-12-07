@@ -49,7 +49,9 @@ Ziel war die Umsetzung eines möglichst **durchgängigen, automatisierten Workfl
 
 **Abdulrahman Omar Saeed Al-Qathmi**
 
-fokussierte sich primär auf den **manuellen Ansatz**.
+fokussierte sich zunächst sehr lange primär auf den **manuellen Ansatz**.
+
+In einem weiteren Ordner findet man eine sehr ausführliche Ausarbeitung des manuellen Ansatzes, welcher letzten Ende doch noch zu gewissem Erfolg führte.
 
 ---
 
