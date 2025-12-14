@@ -23,18 +23,3 @@ typedef struct {
 
 void StatusController_init(StatusController* self);
 void StatusController_step(StatusController* self);
-
-## status_controller.c
-
-void StatusController_init(StatusController* self) {
-  self->state = STATUS_IDLE;
-  self->out_status = STATUS_IDLE;
-}
-
-void StatusController_step(StatusController* self) {
-  if (self->in_tick) {
-    self->state = self->in_cmd;
-    self->out_status = self->state;
-    self->in_tick = 0;
-  }
-}
