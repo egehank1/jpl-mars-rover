@@ -123,6 +123,16 @@
       <state_interface name="effort"/>
     </joint>
 
+    <joint name="rocker_bogie_joint_L_2">
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="rocker_bogie_joint_R_2">
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+
   </ros2_control>
 
   <gazebo>

@@ -5,6 +5,7 @@ from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
+from launch.substitutions import PythonExpression
 
 def generate_launch_description():
 
@@ -44,12 +45,12 @@ def generate_launch_description():
   
   declare_use_robot_state_pub_cmd = DeclareLaunchArgument(
     name='use_robot_state_pub',
-    default_value='false',
+    default_value='False',
     description='Whether to start the robot state publisher')
 
   declare_use_rviz_cmd = DeclareLaunchArgument(
     name='use_rviz',
-    default_value='true',
+    default_value='True',
     description='Whether to start RVIZ')
     
   declare_use_sim_time_cmd = DeclareLaunchArgument(
@@ -61,18 +62,18 @@ def generate_launch_description():
 
   # Publish the joint state values for the non-fixed joints in the URDF file.
   start_joint_state_publisher_cmd = Node(
-    condition=UnlessCondition(gui),
+    condition=IfCondition(PythonExpression([use_robot_state_pub, ' and not ', gui])),
     package='joint_state_publisher',
     executable='joint_state_publisher',
     name='joint_state_publisher')
 
   # A GUI to manipulate the joint state values
   start_joint_state_publisher_gui_node = Node(
-    condition=IfCondition(gui),
+    condition=IfCondition(PythonExpression([use_robot_state_pub, ' and ', gui])),
     package='joint_state_publisher_gui',
     executable='joint_state_publisher_gui',
     name='joint_state_publisher_gui',
-    parameters=[{'use_sim_time': True}])  # <--- wichtig
+    parameters=[{'use_sim_time': use_sim_time}])  # <--- wichtig
 
   # Subscribe to the joint states of the robot, and publish the 3D pose of each link.
   start_robot_state_publisher_cmd = Node(
@@ -90,6 +91,7 @@ def generate_launch_description():
     executable='rviz2',
     name='rviz2',
     output='screen',
+    parameters=[{'use_sim_time': use_sim_time}],
     arguments=['-d', rviz_config_file])
   
   # Create the launch description and populate
