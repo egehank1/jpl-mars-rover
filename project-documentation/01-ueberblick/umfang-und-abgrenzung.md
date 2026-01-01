@@ -33,6 +33,12 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
     - benötigte Plugins und der **FMI-Adapter** dort verfügbar waren
     - Startmechanismen und Plugin-Integration in der Stable-Version eingeschränkt sind
 
+> <img src="../05-bilder/developerversion1.png" width="500">
+> <img src="../05-bilder/developerversion2.png" width="500">
+> <img src="../05-bilder/developerversion3geschafft.png" width="500">
+
+
+
 ---
 
 ### Containerisierung und Virtualisierung
@@ -42,7 +48,8 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
 - Stattdessen wurde bewusst eine **native Ubuntu-LTS-Installation (22.04.5)** genutzt,
     
     um ROS-Integration und Build-Prozesse zu vereinfachen
-    
+> <img src="../05-bilder/developerversion3geschafft.png" width="500">
+
 
 ---
 
@@ -61,6 +68,9 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
 - Es wurde **nicht versucht**, den gesamten Rover zu modellieren
 - Aufgrund der hohen Systemkomplexität und der begrenzten Projektlaufzeit
 - Fokus lag bewusst auf einem **einzelnen Subsystem (Ultraschallsensor)**
+> <img src="../05-bilder/ultraschallsensor1.png" width="500">
+> <img src="../05-bilder/ultraschallsensor2.png" width="500">
+
 
 ---
 
@@ -76,6 +86,10 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
     **Egehan Kilic, Enis Cobanoglu und Ahmet Taha Topal** bewusst verworfen
     
 - Der Fokus lag anschließend vollständig auf **automatisierten Lösungen**
+> <img src="../05-bilder/export_nur_eine_ebene.png" width="500">
+> <img src="../rosco_adapter_falsches_ros2_version.png" width="500">
+
+
 
 ---
 
@@ -93,6 +107,8 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
     - war insbesondere unter macOS kaum nutzbar
 - Diese Version wurde nach ersten Tests **nicht weiterverfolgt**
 - Verwendet wurde ausschließlich die **neuere Developer-Version** aus dem fortiss-Repository
+> <img src="../fmiadapterproblem1.png" width="500">
+> <img src="../fmiadapterproblem2.png" width="500">
 
 ---
 
@@ -109,6 +125,7 @@ Wichtige Einschränkungen:
 - Der FMU-Export funktioniert **nur auf Top-Level-Komponenten**
 - Exporte aus verschachtelten Architekturen waren nicht erfolgreich
 - Für den FMU-Export ist ein **installierter GCC-Compiler zwingend erforderlich**
+> <img src="../gccfehlercompilernoetig.png" width="500">
 
 ---
 
@@ -123,6 +140,8 @@ Wichtige Einschränkungen:
 - Der **ROSCO-Adapter** wurde getestet, war jedoch:
     - inkompatibel mit der eingesetzten ROS-2-Version
     - daher nicht weiterverfolgt
+> <img src="../rosco_adapter_1.png" width="500">
+> <img src="../rosco_adapter_falsches_ros2_version.png" width="500">
 
 ---
 
