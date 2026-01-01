@@ -1,7 +1,5 @@
 # Umfang und Abgrenzung
 
-## IP Mars Rover – Projektgruppe Autofocus
-
 Dieses Dokument beschreibt den **inhaltlichen und technischen Umfang** des Projekts sowie bewusste **Abgrenzungen**, Entscheidungen und Einschränkungen, die sich aus zeitlichen, technischen und toolbedingten Rahmenbedingungen ergeben haben.
 
 ---
