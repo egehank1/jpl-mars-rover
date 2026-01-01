@@ -29,7 +29,7 @@ Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und rea
 > 
 > 
 > automatische Generierung von **C-Code**,
-> 
+> <img src="../05-bilder/genfalse1.png" width="500">
 > anschließende (teil-)automatische Umwandlung in **Python-Code**,
 > 
 > fehlerfreier Commit und Push des Codes in das Repository
