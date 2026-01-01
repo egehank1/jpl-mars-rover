@@ -33,8 +33,6 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
     - benötigte Plugins und der **FMI-Adapter** dort verfügbar waren
     - Startmechanismen und Plugin-Integration in der Stable-Version eingeschränkt sind
 
-> <img src="../05-bilder/developerversion1.png" width="500">
-> <img src="../05-bilder/developerversion2.png" width="500">
 > <img src="../05-bilder/developerversion3geschafft.png" width="500">
 
 
