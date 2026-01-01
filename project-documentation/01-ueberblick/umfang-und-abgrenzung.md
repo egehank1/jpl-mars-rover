@@ -4,6 +4,9 @@ Dieses Dokument beschreibt den **inhaltlichen und technischen Umfang** des Proje
 
 ---
 
+![Architekturübersicht](images/Picture1.png)
+
+
 ## Was Teil des Projekts war
 
 Folgende Punkte waren explizit Bestandteil des Projekts:
