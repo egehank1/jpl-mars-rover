@@ -1,6 +1,6 @@
 ## Ursprüngliche Projektidee
 
-Die ursprüngliche Projektidee des Projekts **CLMD** war es, einen **modellbasierten Entwicklungsprozess** für einen Rover zu untersuchen.
+Die ursprüngliche Projektidee des Projekts **IP-Mars-Rover** war es, einen **modellbasierten Entwicklungsprozess** für einen Rover zu untersuchen.
 
 Konkret sollte ein **kleiner, abgegrenzter Teil der Rover-Logik** in **Autofocus 3** modelliert werden.
 
@@ -24,6 +24,7 @@ Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und rea
 
 > Erstellung eines einfachen, getesteten Modells in Autofocus 3,
 > 
+> <img src="../05-bilder/AF3GesamtModellVersuch.png" width="600">
 > 
 > automatische Generierung von **C-Code**,
 > 
