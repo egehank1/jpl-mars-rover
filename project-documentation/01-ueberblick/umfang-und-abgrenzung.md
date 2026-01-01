@@ -87,7 +87,7 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
     
 - Der Fokus lag anschließend vollständig auf **automatisierten Lösungen**
 > <img src="../05-bilder/export_nur_eine_ebene.png" width="500">
-> <img src="../rosco_adapter_falsches_ros2_version.png" width="500">
+> <img src="../05-bilder/rosco_adapter_falsches_ros2_version.png" width="500">
 
 
 
@@ -107,8 +107,8 @@ Der Schwerpunkt lag auf der **Toolchain und Integration**, nicht auf einer volls
     - war insbesondere unter macOS kaum nutzbar
 - Diese Version wurde nach ersten Tests **nicht weiterverfolgt**
 - Verwendet wurde ausschließlich die **neuere Developer-Version** aus dem fortiss-Repository
-> <img src="../fmiadapterproblem1.png" width="500">
-> <img src="../fmiadapterproblem2.png" width="500">
+> <img src="../05-bilder/fmiadapterproblem1.png" width="500">
+> <img src="../05-bilder/fmiadapterproblem2.png" width="500">
 
 ---
 
@@ -125,7 +125,7 @@ Wichtige Einschränkungen:
 - Der FMU-Export funktioniert **nur auf Top-Level-Komponenten**
 - Exporte aus verschachtelten Architekturen waren nicht erfolgreich
 - Für den FMU-Export ist ein **installierter GCC-Compiler zwingend erforderlich**
-> <img src="../gccfehlercompilernoetig.png" width="500">
+> <img src="../05-bilder/gccfehlercompilernoetig.png" width="500">
 
 ---
 
@@ -140,8 +140,8 @@ Wichtige Einschränkungen:
 - Der **ROSCO-Adapter** wurde getestet, war jedoch:
     - inkompatibel mit der eingesetzten ROS-2-Version
     - daher nicht weiterverfolgt
-> <img src="../rosco_adapter_1.png" width="500">
-> <img src="../rosco_adapter_falsches_ros2_version.png" width="500">
+> <img src="../05-bilder/rosco_adapter_1.png" width="500">
+> <img src="../05-bilder/rosco_adapter_falsches_ros2_version.png" width="500">
 
 ---
 
