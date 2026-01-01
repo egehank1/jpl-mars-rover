@@ -26,6 +26,8 @@ Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und rea
 > 
 > <img src="../05-bilder/AF3GesamtModellVersuch.png" width="500">
 > 
+> 
+> 
 > automatische Generierung von **C-Code**,
 > 
 > anschließende (teil-)automatische Umwandlung in **Python-Code**,
