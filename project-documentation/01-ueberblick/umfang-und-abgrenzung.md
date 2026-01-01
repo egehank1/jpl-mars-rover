@@ -4,7 +4,7 @@ Dieses Dokument beschreibt den **inhaltlichen und technischen Umfang** des Proje
 
 ---
 
-<img src="../05-bilder/architektur.png" width="600">
+<img src="../05-bilder/Picture1.png" width="600">
 
 
 ## Was Teil des Projekts war
