@@ -23,6 +23,7 @@ Ziel war es, den vollständigen Weg von der Modellierung bis zur lauffähigen Si
 Nach der dreimonatigen Projektlaufzeit wurde das Projektziel präzisiert und realistisch angepasst:
 
 > Erstellung eines einfachen, getesteten Modells in Autofocus 3, 
+>
 > <img src="../05-bilder/AF3GesamtModellVersuch.png" width="500">  
 
 > automatische Generierung von **C-Code**,
