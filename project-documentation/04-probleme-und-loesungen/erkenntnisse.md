@@ -37,15 +37,15 @@ Es dient als **Lessons-Learned-Dokument** für zukünftige Projektgruppen und so
 
 ---
 
-### Gute Kommunikation mit den Betreuern
+### Relativ gute Kommunikation mit den Betreuern
 
-- Die Kommunikation mit **Herr Prof. Voss** und **Herr Höner** verlief zuverlässig
+- Die Kommunikation mit **Herr Prof. Voss** und **Herr Höner** verlief relativ zuverlässig
 - Rückmeldungen auf:
     - E-Mails
     - fachliche Fragen
     - Statusupdates
         
-        erfolgten zeitnah und waren hilfreich
+        erfolgten relativ zeitnah und waren in den meisten Fällen hilfreich
         
 - Fachliche Hinweise unterstützten die Entscheidungsfindung im Projekt
 
