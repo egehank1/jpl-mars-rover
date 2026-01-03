@@ -36,6 +36,41 @@ Diese Kombination ermöglichte:
 - funktionierende Build-Prozesse
 - Ausführung der Simulation ohne kritische Laufzeitfehler
 
+### Konkrete Anleitung zur Installation
+
+Wichtig ihr müsst vorher wsl funktionierend auf eurem System haben und dann einen der Anleitungsoptionen auswählen:
+
+1.) Anleitung zum Installieren von ROS und dem Repo der alten Gruppe  von Anfang an: Inhalt der IP-Anleitung (s.u.)
+
+oder
+
+2.) die .tar Datei vom Sciebo runterladen:
+https://fh-aachen.sciebo.de/s/tziQDgpgJ9RR6oH
+
+Dann folgende Schritte durchführen:
+im cmd bzw. Terminal 
+$ wsl -l -v (listet eure Ubuntu systeme aus - müsste eigentlich Ubuntu-22.04 stehen)
+$ wsl --unregister <Name eures Systems> (müsste Ubuntu-22.04 sein)
+
+//Ordner WSL im C:/ Laufwerk erstellen und innerhalb des WSL Ordners einen Ubuntu Ordner erstellen
+$ wsl --import Ubuntu-22.04 C:\WSL\Ubuntu <Pfad wo die .tar Datei liegt><Datei> --version 2 
+(z.B. wsl --import Ubuntu-22.04 C:\WSL\Ubuntu C:\Backups\ubuntu_backup.tar --version 2)
+
+// müsste den Import nun starten danach:
+$ wsl (startet das importierte Subsystem als root)
+// Damit er beim nächsten mal mit dem Account ip_m startet folgendes machen
+$ printf "[user]\ndefault=ip_m\n" > /etc/wsl.conf
+$ exit (bringt dich wieder zurück ins cmd)
+$ wsl --shutdown
+$ wsl (müsste nun das Subsystem als ip_m starten)
+
+// nun könnt die unten angegebene Aliase verwendet um die sachen auszuführen
+aliase: (für die unteren drei Befehle braucht ihr jeweils ein eigenes Terminal)
+osr = cd zu osr_gazebo
+gazebo_test = launch rest_world
+rviz = launch rviz
+teleop = run teleop
+
 ---
 
 ### Nicht erfolgreiche Konfigurationen (nicht empfohlen)
