@@ -26,40 +26,42 @@ Ausgang:
 
 ## Typischer AutoFOCUS-Code (generiert)
 
-### Datei: `status_controller.h`
+### Datei: `status_controller.c`
 
 ```c
-#ifndef STATUS_CONTROLLER_H
-#define STATUS_CONTROLLER_H
+#include "status_controller/status_controller.h"
 
-#include <stdint.h>
+void StatusController_init(StatusController* self)
+{
+  if (!self) return;
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-typedef enum {
-  STATUS_IDLE    = 0u,
-  STATUS_DRIVING = 1u,
-  STATUS_ERROR   = 2u,
-  STATUS_MANUAL  = 3u,
-  STATUS_AUTONOMY= 4u
-} StatusEnum;
-
-typedef struct {
-  StatusEnum in_cmd;
-  uint8_t    in_tick;
-
-  StatusEnum out_status;
-
-  StatusEnum _state;
-} StatusController;
-
-void StatusController_init(StatusController* self);
-void StatusController_step(StatusController* self);
-
-#ifdef __cplusplus
+  self->in_cmd = STATUS_IDLE;
+  self->in_tick = 0u;
+  self->_state = STATUS_IDLE;
+  self->out_status = STATUS_IDLE;
 }
-#endif
 
-#endif
+void StatusController_step(StatusController* self)
+{
+  if (!self) return;
+
+  if (self->in_tick == 0u) {
+    self->out_status = self->_state;
+    return;
+  }
+
+  switch (self->in_cmd) {
+    case STATUS_IDLE:
+    case STATUS_DRIVING:
+    case STATUS_ERROR:
+    case STATUS_MANUAL:
+    case STATUS_AUTONOMY:
+      self->_state = self->in_cmd;
+      break;
+    default:
+      break;
+  }
+
+  self->out_status = self->_state;
+  self->in_tick = 0u;
+}
