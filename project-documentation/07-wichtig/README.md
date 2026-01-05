@@ -1,7 +1,7 @@
-# Projekt: Autofocus / ROS
+# Projekt: IP Mars Rover / Gruppe AutoFOCUS
 
 Dieses Repository enthält Arbeiten rund um **Autofocus** und **ROS**.  
-Es existieren **zwei zentrale Branches**, die **nicht** miteinander gemerged werden dürfen.
+Es existieren **zwei zentrale Branches**, die **nicht** mit main gemerged werden dürfen.
 
 ---
 
