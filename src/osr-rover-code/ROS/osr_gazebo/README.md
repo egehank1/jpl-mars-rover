@@ -128,6 +128,7 @@ Um mit Gazebo und Ros2 arbeiten zu können, müsst ihr oft mehrere Terminals gle
 
 Öffnet im Home verzeichnis eures Nutzers die .bashrc datei
 ```bash
+cd ~
 nano .bashrc
 ```
 Geht an das Ende der Datei und tragt folgendes ein
@@ -161,25 +162,26 @@ Um zu verstehen, wie ros funktioniert, empfehlen wir folgende Quellen durchzugeh
 Sensoren die man hinzufügen möchte, werden im gazebo.urdf.xacro file definiert. Dieses File wird dann vom osr.urdf.xarco file, dass den Rover definiert, importiert.
 ## Lidar Sensor 
 Der Lidar Sensor liefert seine Daten über das Topic "/lidar_plugin/out". Hier im Bild sieht man die Visualisierung der Daten einer Wand über Rviz
-![Ubuntu](https://github.com/MikaBabel/IP-Marsrover/blob/main/Assets/Lidar%20Rviz.png)
-
-
+![Ubuntu](https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25/-/blob/main/Assets/Lidar%20Rviz.png)
 
 
 ## Ultraschallsensoren
-Ultraschallsensoren werden offiziell nicht unterstützt. Deshalb haben wir hier einen Workaround gewählt: Einen Lidar-Sensor, der eine Message vom Typ "Range" veröffentlicht. Diesen Datentyp würde ein normaler Ultraschallsensor auch liefern. 
-![Ubuntu](https://github.com/MikaBabel/IP-Marsrover/blob/main/Assets/Ultraschall%20Rviz.png)
+Wir haben vier funktionsfähige Ultraschallsensoren erfolgreich an den beiden Vorder- und Hinterrädern angebracht und diese mit geeigneten Modellen visualisiert.
+Diese vier Ultraschallsensoren veröffentlichen über ihre jeweils eigenen Topics Daten der Sensoren, die man sich wie folgt anschauen kann:
+Mit diesem Befehl kann man bei laufender Gazebo-Simulation die laufenden Topics anschauen:
+```bash
+ros2 topic list
+```
+Hier werden die vier Ultraschallsensoren über „/ultrasonic_sensor_xx” angezeigt.
+```bash
+ros2 topic echo /ultrasonic_sensor_fl
+```
+Mit diesem Befehl kann man sich beispielsweise den Output des Frontwheel-Left-Topics ausgeben lassen. Das Terminal gibt nun die Entfernung zum nächsten kollidierenden Objekt an.
+Testweise kann man sich nun auch einen Block vor bzw. hinter den Rover setzen und in der Terminalkonsole beobachten, wie sich die Range-Daten zum nächsten Objekt verkleinern.
 
-Der Blaue cone visualisiert den Ultraschallsensor
+Sollte es im Verlauf notwendig sein, die Ultraschallsensoren zu bearbeiten oder umzupositionieren, kann dies ganz unten in der gazebo.urdf.xacro vorgenommen werden.
 
-
-Es hat lange gedauert, den Ultraschallsensor zum laufen zu bringen. Deshalb ist zur Zeit aus Testzwecken nur ein Ultraschallsensor am Linken Vorderen Rad definiert. Um alle anderen Sensoren hinzuzufügen, müsst ihr im "ors.urdf.xarco" für jeden Sensor ein neues XML Konstrukt bauen:
-### Option 1
-XML Block des Ultraschallsensors kopieren und für jeden neuen Sensor einfügen, bei jedem Block die Parameter wie Position am Rover, Topic und Name anpassen. Sehr schreibaufwendig, so kann es aber funktionieren.
-### Option 2
-Ein xacro macro erstellen (https://abedgnu.github.io/Notes-ROS/chapters/ROS/10_robot_modeling/xarco.html#macro). Das macro ist wie eine Klasse. Man muss den Ultraschallsensor nur einmal definieren, und kann ihn dann mehrmals mit Parametern (Position, Topic etc.) bauen. 
-
-Wichtig: Jeder Ultraschallsensor soll sein eigenes Topic haben!
+Im Folgenden zeigen wir nun Bilder wie die Ultraschallsensoren in der Gazebo & Rviz Simulation aussehen.
 
 # Laden Objekte wie Räume oder Landschaften
 Es sollte möglich sein, erstelle Räume über das Launch File zu starten. Zur Zeit funktioniert das mit dem spawn_entity Node in Option 1
