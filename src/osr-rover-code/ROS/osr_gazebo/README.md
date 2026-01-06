@@ -168,6 +168,7 @@ Der Lidar Sensor liefert seine Daten über das Topic "/lidar_plugin/out". Hier i
 ## Ultraschallsensoren
 Wir haben vier funktionsfähige Ultraschallsensoren erfolgreich an den beiden Vorder- und Hinterrädern angebracht und diese mit geeigneten Modellen visualisiert.
 Diese vier Ultraschallsensoren veröffentlichen über ihre jeweils eigenen Topics Daten der Sensoren, die man sich wie folgt anschauen kann:
+
 Mit diesem Befehl kann man bei laufender Gazebo-Simulation die laufenden Topics anschauen:
 ```bash
 ros2 topic list
@@ -182,6 +183,11 @@ Testweise kann man sich nun auch einen Block vor bzw. hinter den Rover setzen un
 Sollte es im Verlauf notwendig sein, die Ultraschallsensoren zu bearbeiten oder umzupositionieren, kann dies ganz unten in der gazebo.urdf.xacro vorgenommen werden.
 
 Im Folgenden zeigen wir nun Bilder wie die Ultraschallsensoren in der Gazebo & Rviz Simulation aussehen.
+Gazebo:
+[Gazebo_Ultraschallsensoren](https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25/-/blob/main/Assets/Ultraschallsensoren_Gazebo.png)
+
+Rviz:
+[Rviz_Ultraschallsensoren](https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25/-/blob/main/Assets/Ultraschallsensoren_Rviz.png)
 
 # Laden Objekte wie Räume oder Landschaften
 Es sollte möglich sein, erstelle Räume über das Launch File zu starten. Zur Zeit funktioniert das mit dem spawn_entity Node in Option 1
