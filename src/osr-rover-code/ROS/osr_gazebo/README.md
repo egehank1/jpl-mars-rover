@@ -183,10 +183,13 @@ Testweise kann man sich nun auch einen Block vor bzw. hinter den Rover setzen un
 Sollte es im Verlauf notwendig sein, die Ultraschallsensoren zu bearbeiten oder umzupositionieren, kann dies ganz unten in der gazebo.urdf.xacro vorgenommen werden.
 
 Im Folgenden zeigen wir nun Bilder wie die Ultraschallsensoren in der Gazebo & Rviz Simulation aussehen.
+
 Gazebo:
+
 ![Gazebo_Ultraschallsensoren](../../../../Assets/Ultraschallsensoren_Gazebo.png)
 
 Rviz:
+
 ![Rviz_Ultraschallsensoren](../../../../Assets/Ultraschallsensoren_Rviz.png)
 
 # Laden Objekte wie Räume oder Landschaften
