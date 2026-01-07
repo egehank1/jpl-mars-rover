@@ -26,7 +26,7 @@ Es dürfen **keine Merges** durchgeführt werden:
 - Kein Merge von `autofocus_main` nach `autofocus_erfolg_manueller_ansatz`
 - Kein Merge in einen möglichen `main`-Branch
 
-**Grund:** Ein Merge führt zu Problemen (z. B. Build- oder ROS-Konflikte).  
+**Grund:** Ein Merge könnte Stand jetzt zu Problemen führen.(z. B. Build- oder ROS-Konflikte).  
 Die Branches müssen **strikt isoliert** bleiben.
 
 ---
