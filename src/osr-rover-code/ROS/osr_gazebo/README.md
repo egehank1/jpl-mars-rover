@@ -1,6 +1,6 @@
 # WSL
 Wenn ihr Windows verwendet, müsst ihr WSL nutzen, um mit der Simulation arbeiten zu können. Das geht ganz einfach: Im Microsoft Store nach "Ubuntu 22.04.5 LTS" suchen und installieren. Es MUSS die Version 22.04.5 LTS sein. 
-![Ubuntu](./Assets/Ubuntu%20Version.png)
+![Ubuntu](../../../../Assets/Ubuntu%20Version.png)
 
 Die Alternative wäre, eine VM mit dieser Ubuntu Version zu nutzen, empfohlen wird WSL.
 # Installieren
@@ -161,8 +161,9 @@ Um zu verstehen, wie ros funktioniert, empfehlen wir folgende Quellen durchzugeh
 # Sensoren
 Sensoren die man hinzufügen möchte, werden im gazebo.urdf.xacro file definiert. Dieses File wird dann vom osr.urdf.xarco file, dass den Rover definiert, importiert.
 ## Lidar Sensor 
-Der Lidar Sensor liefert seine Daten über das Topic "/lidar_plugin/out". Hier im Bild sieht man die Visualisierung der Daten einer Wand über Rviz
-![Ubuntu](https://git.fh-aachen.de/ip-marsrover-ws25/marsrover-ws25/-/blob/main/Assets/Lidar%20Rviz.png)
+Der Lidar Sensor liefert seine Daten über das Topic "/lidar_plugin/out". Zusätzlich zur Funktionalität der Vorgruppe haben wir die Visualisierung des Lidar-Sensormodells erfolgreich eingebunden und richtig positioniert.
+
+Die Visualisierung des Modells in Gazebo und Rviz ist auf den unteren Screenshots der Ultraschallsensoren zu sehen.
 
 
 ## Ultraschallsensoren
@@ -184,110 +185,31 @@ Sollte es im Verlauf notwendig sein, die Ultraschallsensoren zu bearbeiten oder 
 
 Im Folgenden zeigen wir nun Bilder wie die Ultraschallsensoren in der Gazebo & Rviz Simulation aussehen.
 
-Gazebo:
+###Gazebo:
 
 ![Gazebo_Ultraschallsensoren](../../../../Assets/Ultraschallsensoren_Gazebo.png)
 
-Rviz:
+###Rviz:
 
 ![Rviz_Ultraschallsensoren](../../../../Assets/Ultraschallsensoren_Rviz.png)
 
 # Laden Objekte wie Räume oder Landschaften
-Es sollte möglich sein, erstelle Räume über das Launch File zu starten. Zur Zeit funktioniert das mit dem spawn_entity Node in Option 1
 
 ## Option 1
-Alles über Launchdatei Laden. Die Beste Option
-### Ansatz 1
-Eine spawn_entity benutzen, um Raum zusätzlich zum Rover zu spawnen. Das hat funktioniert. So wird der Rover geladen wie es vorgesehen ist, und der Raum unabhängig davon gesetzt.
+Es ist nun möglich, erstellte Räume über das Launch-File dynamisch zu laden. Wir haben die Launch-Datei „world.launch.py” so angepasst, dass mit dem zusätzlichen Argument „world=path/zur/world” die Standardwelt, die nichts enthält, überschrieben wird und der Rover dann mit der erstellten Welt geladen wird.
 
-```python
- # Spawnen des Raums, -file String muss noch dynamisch geladen werden!!!
-
-    spawn_room = Node(
-    package='gazebo_ros',
-    executable='spawn_entity.py',
-    arguments=[
-        '-file',   "/home/girskorr/osr/ROS/osr_gazebo/models/room/model.sdf",
-        '-entity', 'room',
-         '-x',      '0',          
-        '-y',      '0',
-        '-z',      '0',
-        '-R',      '0',
-        '-P',      '0',
-        '-Y',      '0'
-    ],
-    output='screen'
-)
+Befehlsbeispiel:
+```bash
+ros2 launch osr_gazebo world.launch.py world:=worlds/labyrinth_world.world
 ```
-### Ansatz 2
-Welt mit dem "world" launch Argument laden. Funktioniert nicht
+Mit diesem Befehl wird der Rover in eine unserer Beispielwelten geladen, in der wir ein Labyrinth und einen roten Würfel im Boden eingefügt haben. 
 
-```python
-gazebo = IncludeLaunchDescription(
-         PythonLaunchDescriptionSource([os.path.join(
-                    get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
-                    launch_arguments={'use_sim_time':'true', "world": PathJoinSubstitution([
-            get_package_share_directory('osr_gazebo'),
-            'worlds',
-            'test_world_with_rover.world'
-        ])}.items())
-```
+Das würde beispielsweise dann so aussehen:
 
-
+![Labyrinthwelt_Gazebo](../../../../Assets/Ultraschallsensoren_Rviz.png)
 
 ## Option 2
-### Schritt 1: Umgebungsordner herunterladen
-1. Ladet eine der verfügbaren Umgebungen aus dem Umgebung-Ordner herunter.
-2. Alternativ könnnt ihr kompatible Modelle aus dem Internet beziehen.
-### Schritt 2: Umgebungsordner in Gazebo einbinden
-Kopiert ihr den heruntergeladenen Ordner in den Gazebo-Model-Pfad:
-```python
-/home/<IHR_BENUTZERNAME>/.gazebo/models/
-```
-### Schritt 3: Umgebung in Gazebo einfügen
-1. Starte die Simulation in Gazebo.
-2. Klicke links oben auf „Insert“.
-3. Dort findest du die importierten Umgebungen, die du einfach per Klick in die Simulation einfügen kannst.
-
-### Hinweis: Umgebungen aus dem Internet herunterladen
-Falls du eine Umgebung aus dem Internet verwendest, beachte folgende Punkte:
-Die 3D-Modelldatei die Endung ".dae" besitzt.
-Der Ordner muss zusätzlich die Dateien model.sdf und model.config enthalten.
-Falls diese Dateien fehlen, kannst du sie auch selbst erstellen und anpassen.
-
-## Option 3
-### Welt erstellen
-Wenn ihr eine neue Welt erstellen wollt, müsst ihr den Rover als sdf Datei darstellen. Folgendes im urdf ordner ausführen
-``` bash
-ros2 run xacro xacro your_rover.urdf.xacro > rover.urdf
-gz sdf -p rover.urdf > rover.sdf
-```
-Jetzt könnt ihr eine .world datei definieren, mit dem Rover und einem Model für den Raum / die Landschaft:
-``` xml
-<!-- test_world.world -->
-<?xml version="1.0" ?>
-<sdf version="1.8">
-  <world name="test_world">
-    <!-- Raum als statisches SDF-Modell -->
-    <include>
- <uri>file:///pfad_zum_package/osr_gazebo/models/room/model.sdf</uri><pose>0 0 0 0 0 0</pose>
-    </include>
-    <!-- Rover-Modell -->
-    <include>
-      <uri>file:///pfad_zum_package/osr/ROS/osr_gazebo/urdf/rover.sdf</uri>
-      <name>rover</name>
-      <pose>0 0 0.1 0 0 1.57</pose>
-    </include>
-  </world>
-</sdf>
-```
-Dann die Simulation mit dieser .world Datei starten:
-```bash
-ros2 launch gazebo_ros gazebo.launch.py world:=/pfad/zu/test_world.world
-```
-Das Problem: 
-Prozesse wie " load_joint_state_controller", "rover_wheel_controller" oder "servo_controller", die in der Launchdatei gestartet werden, werden mit dieser Methode ausgelassen. Diese Simulation ist also nicht voll funktionsfähig.
-
+Objekte, Landschaften und weitere Elemente, die in allen Welten spawnen sollen und nicht nur in der Welt, die dynamisch geladen wird, können in der model.sdf eingefügt werden. Dadurch werden die Änderungen in allen Welten angezeigt.
 
 # Rviz2
 Mit Rviz lassen sich alle Daten, die ROS2 oder Gazebo über Topics liefern, visualisieren. Was genau gezeigt wird,  steht in der custom_settings.rviz im rviz Ordner. Diese Settingsdatei wird in der rviz.launch.py geladen. Wenn ihr eine andere Settingsdatei laden wollt, könnt ihr diese im rviz Ordner ablegen und in der rviz.launch.py laden. Um eine Settingsdatei zu erstellen, könnt ihr eigene Displays in Rviz hinzufügen, und die aktuelle ansicht per File->save_as im rviz ordner ablegen. 
