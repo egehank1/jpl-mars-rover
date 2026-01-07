@@ -185,11 +185,11 @@ Sollte es im Verlauf notwendig sein, die Ultraschallsensoren zu bearbeiten oder 
 
 Im Folgenden zeigen wir nun Bilder wie die Ultraschallsensoren in der Gazebo & Rviz Simulation aussehen.
 
-###Gazebo:
+##Gazebo:
 
 ![Gazebo_Ultraschallsensoren](../../../../Assets/Ultraschallsensoren_Gazebo.png)
 
-###Rviz:
+##Rviz:
 
 ![Rviz_Ultraschallsensoren](../../../../Assets/Ultraschallsensoren_Rviz.png)
 
@@ -206,7 +206,7 @@ Mit diesem Befehl wird der Rover in eine unserer Beispielwelten geladen, in der 
 
 Das würde beispielsweise dann so aussehen:
 
-![Labyrinthwelt_Gazebo](../../../../Assets/Ultraschallsensoren_Rviz.png)
+![Labyrinthwelt_Gazebo](../../../../Assets/Dynamisches_Laden_Labyrinth.png )
 
 ## Option 2
 Objekte, Landschaften und weitere Elemente, die in allen Welten spawnen sollen und nicht nur in der Welt, die dynamisch geladen wird, können in der model.sdf eingefügt werden. Dadurch werden die Änderungen in allen Welten angezeigt.
