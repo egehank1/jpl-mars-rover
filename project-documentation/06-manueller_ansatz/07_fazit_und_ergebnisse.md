@@ -23,7 +23,7 @@ Die Konsolenausgabe bestätigt:
 
 **Build- und Launch-Ausgabe:**
 
-<img src="bilder/colcon_build_und_launch.png" width="900"/>
+<img src="../05-bilder/colcon_build_und_launch.png" width="500">
 
 ---
 
@@ -40,7 +40,7 @@ Die Ausgabe zeigt:
 
 **Node- und Topic-Übersicht:**
 
-<img src="bilder/ros2_node_und_topic_list.png" width="800"/>
+<img src="../05-bilder/ros2_node_und_topic_list.png" width="500">
 
 ---
 
@@ -57,7 +57,8 @@ Die Konsole zeigt, dass:
 
 **Manuelles Publizieren einzelner Statuswerte:**
 
-<img src="bilder/ros2_topic_pub_single.png" width="900"/>
+
+<img src="../05-bilder/ros2_topic_pub_single.png" width="500">
 
 ---
 
@@ -74,7 +75,7 @@ Dies bestätigt:
 
 **Zyklisches Publizieren mit Rate:**
 
-<img src="bilder/ros2_topic_pub_rate.png" width="900"/>
+<img src="../05-bilder/ros2_topic_pub_rate.png" width="500">
 
 ---
 
