@@ -4,7 +4,7 @@
   <version>0.0.1</version>
   <description>Status LED visualization as RViz marker</description>
 
-  <maintainer email="noreply@fh-aachen.de">MarsRover Team</maintainer>
+  <maintainer email="enis.cobanoglu@alumnni.fh-aachen.de">MarsRover Team</maintainer>
   <license>Apache-2.0</license>
 
   <!-- Build system -->
@@ -19,3 +19,5 @@
     <build_type>ament_python</build_type>
   </export>
 </package>
+
+# technische XML Deklaration

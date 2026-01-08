@@ -24,7 +24,7 @@ class StatusLedNode(Node):
     def __init__(self):
         super().__init__('osr_status_led')
 
-        # Parameters (can be overridden via launch file)
+        # Parameters (können überschrieben werden via launch file)
         self.declare_parameter('frame_id', 'base_link')
         self.declare_parameter('status_topic', '/rover/status')
         self.declare_parameter('marker_topic', '/rover/status_led/marker')
