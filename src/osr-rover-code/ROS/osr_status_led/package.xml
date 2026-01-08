@@ -3,7 +3,7 @@
   <name>osr_status_led</name>
   <version>0.0.1</version>
   <description>Status LED visualization as RViz marker</description>
-
+  <!-- Mail nicht zwingend notwendig -->
   <maintainer email="enis.cobanoglu@alumnni.fh-aachen.de">MarsRover Team</maintainer>
   <license>Apache-2.0</license>
 
