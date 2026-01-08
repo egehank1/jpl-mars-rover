@@ -9,147 +9,85 @@ der **korrekten ROS-Integration** sowie der **funktionalen Verifikation**
 
 ---
 
-## Erfolgreicher Build-Prozess
+## Erfolgreicher Build-Prozess und Start der ROS-Nodes
 
 Der gesamte ROS-Workspace konnte erfolgreich mit `colcon` gebaut werden.
-Dabei wurden sowohl das Wrapper-Package als auch alle abhängigen ROS-Pakete
-fehlerfrei kompiliert und installiert.
+Im Anschluss wurde der Status-LED-Node über ein Launch-File gestartet.
 
-Der Build bestätigt insbesondere:
+Die Konsolenausgabe bestätigt:
 
-- korrekte Paketstruktur
-- vollständige Abhängigkeitsauflösung
-- korrekte Registrierung der ROS-Nodes
-- erfolgreiche Integration von generiertem C-Code in den ROS-Buildprozess
+- fehlerfreien Build-Prozess
+- erfolgreiche Initialisierung des ROS-Nodes
+- korrekte Übergabe von Parametern
+- aktive Verarbeitung von Statuswerten
 
-**Build-Ausgabe (`colcon build`):**
+**Build- und Launch-Ausgabe:**
 
-<img src="images/colcon_build_success.png" alt="Erfolgreicher colcon build" width="900"/>
-
----
-
-## Start und Ausführung der ROS-Nodes
-
-Nach dem erfolgreichen Build konnte der ROS-Node über ein Launch-File
-gestartet werden. Der Node initialisiert dabei:
-
-- den AutoFOCUS-generierten StatusController
-- den ROS-Wrapper (Adapter)
-- die zyklische Tick-Ausführung
-- Publisher und Subscriber
-
-Die Konsolenausgabe bestätigt den erfolgreichen Start der Node-Instanz.
-
-**Node-Start über Launchfile:**
-
-<img src="images/ros2_launch_status_led.png" alt="ROS2 Launch Ausgabe" width="900"/>
+<img src="bilder/01_colcon_build_und_launch.png" width="900"/>
 
 ---
 
-## Verifikation der Node-Existenz
+## Registrierung im ROS-Graphen und Topic-Struktur
 
-Über `ros2 node list` konnte überprüft werden, dass der Adapter-Node
-korrekt im ROS-Graphen registriert ist.
+Nach dem Start wurde überprüft, ob der Node korrekt im ROS-Graphen
+registriert ist und die erwarteten Topics existieren.
 
-Dies zeigt, dass:
+Die Ausgabe zeigt:
 
-- der Node korrekt installiert wurde
-- ROS 2 ihn zur Laufzeit erkennt
-- die `setup.py`- und `setup.cfg`-Konfiguration korrekt ist
+- registrierten Node (`/status_led`)
+- vorhandene Status-Topics
+- aktive Subscriber-Verbindung
 
-**Node-Liste:**
+**Node- und Topic-Übersicht:**
 
-<img src="images/ros2_node_list.png" alt="ROS2 Node Liste" width="700"/>
-
----
-
-## Topic-Registrierung und Kommunikation
-
-Im nächsten Schritt wurde überprüft, ob die erwarteten Topics
-korrekt angelegt wurden.
-
-Dabei zeigt sich:
-
-- der Status-Topic existiert
-- der Wrapper subscribed korrekt
-- die LED-Visualisierung published eigene Marker
-
-**Topic-Liste:**
-
-<img src="images/ros2_topic_list.png" alt="ROS2 Topic Liste" width="700"/>
-
----
-
-## Publisher- und Subscriber-Beziehungen
-
-Durch `ros2 topic info` konnte verifiziert werden,
-dass die Publisher- und Subscriber-Beziehungen korrekt aufgebaut sind.
-
-Insbesondere zeigt sich:
-
-- genau ein Subscriber auf dem Status-Topic
-- korrekte Typdefinition (`std_msgs/String`)
-- saubere Trennung zwischen Modelllogik und Visualisierung
-
-**Topic-Informationen:**
-
-<img src="images/ros2_topic_info.png" alt="ROS2 Topic Info" width="700"/>
+<img src="bilder/02_ros2_node_und_topic_list.png" width="800"/>
 
 ---
 
 ## Funktionale Verifikation durch manuelles Publizieren
 
 Zur funktionalen Überprüfung wurde der Status-Topic manuell mit
-verschiedenen Werten beschrieben.
+einzelnen Statuswerten beschrieben.
 
 Die Konsole zeigt, dass:
 
-- Nachrichten korrekt empfangen werden
+- Nachrichten korrekt publiziert werden
+- der Wrapper die Daten verarbeitet
 - der AutoFOCUS-Code zyklisch ausgeführt wird
-- Statuswechsel verarbeitet werden
-- der Wrapper den generierten Code korrekt ansteuert
 
-**Manuelles Publizieren von Statuswerten:**
+**Manuelles Publizieren einzelner Statuswerte:**
 
-<img src="images/ros2_topic_pub_single.png" alt="ROS2 Topic Pub Single" width="900"/>
-
-**Zyklisches Publizieren:**
-
-<img src="images/ros2_topic_pub_rate.png" alt="ROS2 Topic Pub Rate" width="900"/>
+<img src="bilder/03_ros2_topic_pub_single.png" width="900"/>
 
 ---
 
-## Bewertung des manuellen Ansatzes
+## Zyklisches Publizieren und Laufzeitverhalten
 
-Der manuelle Ansatz hat gezeigt, dass:
+Zusätzlich wurde der Status-Topic zyklisch mit einer festen Rate
+beschrieben.
 
-- AutoFOCUS-generierter Code strukturell gut in ROS 2 integrierbar ist
-- keine Änderungen an der generierten Logik notwendig sind
-- die Trennung von Modelllogik und Systemintegration klar möglich ist
-- ROS-spezifische Aspekte vollständig im Wrapper gekapselt werden können
+Dies bestätigt:
 
-Damit eignet sich dieser Ansatz besonders als:
+- stabile Laufzeitausführung
+- kontinuierliche Verarbeitung
+- robuste ROS-Kommunikation
 
-- Referenzintegration
-- Debug- und Validierungsstrategie
-- Brücke zwischen modellbasierter Entwicklung und ROS-Systemen
+**Zyklisches Publizieren mit Rate:**
+
+<img src="bilder/04_ros2_topic_pub_rate.png" width="900"/>
 
 ---
 
-## Gesamteinschätzung
+## Gesamtbewertung
 
-Insgesamt konnte der manuelle Ansatz erfolgreich umgesetzt und
-funktional verifiziert werden.
+Der manuelle Ansatz zur Integration von AutoFOCUS-generiertem Code
+in ROS 2 konnte erfolgreich umgesetzt und verifiziert werden.
 
-Die Ergebnisse zeigen, dass eine modellbasierte Entwicklung mit AutoFOCUS
-auch ohne automatisierte Toolchain-Integration sauber und kontrolliert
-in ein ROS 2-System überführt werden kann.
+Die Ergebnisse zeigen:
 
-Die Kombination aus:
+- klare Trennung zwischen Modelllogik und ROS-Integration
+- stabile Build- und Laufzeitergebnisse
+- vollständige Nutzung von ROS-Standardmechanismen
 
-- generiertem C-Code
-- klarer Wrapper-Architektur
-- ROS-Standardmechanismen (Topics, Nodes, Launch)
-
-bildet eine stabile Grundlage für weiterführende Integrations-
-und Automatisierungsansätze.
+Damit bildet der Ansatz eine **belastbare Grundlage**
+für weiterführende Integrations- und Automatisierungsschritte.
