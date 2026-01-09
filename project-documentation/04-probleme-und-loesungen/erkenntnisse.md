@@ -45,7 +45,7 @@ Es dient als **Lessons-Learned-Dokument** für zukünftige Projektgruppen und so
     - fachliche Fragen
     - Statusupdates
         
-        erfolgten relativ zeitnah und waren in den meisten Fällen hilfreich
+        erfolgten relativ zeitnah und waren hilfreich
         
 - Fachliche Hinweise unterstützten die Entscheidungsfindung im Projekt
 
