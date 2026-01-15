@@ -68,7 +68,7 @@ Zu Beginn des Projekts testeten **alle Teammitglieder** zunächst den **manuelle
 Dabei traten früh wiederkehrende Probleme auf, unter anderem:
 
 - nicht kompatible Codekonstrukte wie z. B. `GenTrueBoolean`
-- C-Code-Zeilen und Funktionsaufrufe, die sich nicht direkt in Python/ROS übertragen ließen
+- C-Code-Zeilen und Funktionsaufrufe, die sich nicht direkt in Python/ROS übertragen ließen und die angepasst werden müssen.
 - notwendige manuelle Umbenennungen von Variablen und Funktionen
 - erhöhte Fehleranfälligkeit und hoher Zeitaufwand
 
