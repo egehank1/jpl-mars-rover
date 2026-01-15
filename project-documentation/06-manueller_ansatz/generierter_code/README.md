@@ -4,55 +4,73 @@
 
 Der in diesem Verzeichnis enthaltene Quellcode basiert **teilweise auf automatisch generiertem C-Code aus AutoFOCUS3**.
 
-Die automatische Codegenerierung diente als Ausgangspunkt, um die im Modell beschriebenen Komponenten strukturell abzubilden.
+Die automatische Codegenerierung wurde verwendet, um die im AutoFOCUS-Modell beschriebenen Komponenten, Ports und Abläufe strukturell in C-Code abzubilden. Der generierte Code stellt dabei ein **Grundgerüst** dar, das die Modellstruktur widerspiegelt, jedoch noch keine vollständige lauffähige oder integrierte Systemlösung darstellt.
 
-Im weiteren Projektverlauf wurde der generierte Code **umfangreich manuell überarbeitet, erweitert und angepasst**, um ihn für den praktischen Einsatz sowie für die Integration in die restliche Systemumgebung nutzbar zu machen.
+Im weiteren Projektverlauf wurde dieser generierte Code **umfangreich manuell überarbeitet, erweitert und angepasst**, um ihn für den praktischen Einsatz, reale Laufzeitbedingungen sowie für die Integration in die restliche Systemumgebung nutzbar zu machen.
+
+---
+
+## Motivation für die Codeanpassungen
+
+AutoFOCUS3 eignet sich hervorragend zur modellbasierten Entwicklung und zur formalen Beschreibung von Systemarchitekturen. Die automatisch erzeugten Codeartefakte sind jedoch primär auf **Strukturabbildung und Simulation** ausgelegt.
+
+Für den Einsatz in einem realen Softwaresystem waren daher zusätzliche Maßnahmen erforderlich, unter anderem:
+
+- Anpassung an reale Ausführungsumgebungen  
+- Ergänzung fehlender funktionaler Logik  
+- Vereinheitlichung von Schnittstellen über Komponenten hinweg  
+- Verbesserung von Lesbarkeit, Wartbarkeit und Erweiterbarkeit  
 
 ---
 
 ## Code-Herkunft und Anpassungen
 
-Der Code lässt sich in zwei Kategorien einteilen:
+Der Code lässt sich in zwei Hauptkategorien einteilen:
 
 ### 1. AutoFOCUS-generierter Code
 
-- Grundstruktur der Komponenten  
+Der automatisch generierte Anteil umfasst insbesondere:
+
+- Grundstruktur der Komponenten gemäß Modellhierarchie  
 - Trennung in `.c`- und `.h`-Dateien  
 - Port-basierte Ein- und Ausgabestrukturen  
-- Initialisierungs-, Reset- und Step-Funktionen  
+- Datentypdefinitionen entsprechend des Modells  
+- Standardisierte Funktionen wie:
+  - Initialisierung (`init`)
+  - Reset (`reset`)
+  - Zyklische Ausführung (`step`)
 
-Diese Teile wurden direkt oder sinngemäß aus AutoFOCUS3 generiert und anschließend als Basis weiterverwendet.
+Diese Teile wurden direkt oder sinngemäß aus AutoFOCUS3 generiert und anschließend als **technische Basis** für die weitere Entwicklung verwendet.
+
+---
 
 ### 2. Manuell angepasster und ergänzter Code
 
-Ein wesentlicher Teil der Dateien wurde **nachträglich manuell angepasst**, darunter:
+Ein wesentlicher Teil des Codes wurde **nachträglich manuell angepasst oder ergänzt**, darunter unter anderem:
 
 - Umstrukturierung und Vereinheitlichung von Schnittstellen  
-- Ergänzung fehlender Logik für den praktischen Betrieb  
-- Anpassung der internen Zustandsverwaltung  
-- Korrekturen an Datentypen und Signalflüssen  
-- Erweiterungen zur besseren Anbindung an externe Software (z. B. ROS 2 Wrapper)
+- Ergänzung fehlender oder unvollständiger Logik für den praktischen Betrieb  
+- Anpassung und Vereinfachung der internen Zustandsverwaltung  
+- Korrekturen an Datentypen, Signalflüssen und Initialwerten  
+- Fehlerbehebungen und Robustheitsverbesserungen  
+- Erweiterungen zur besseren Anbindung an externe Software  
+  (z. B. ROS 2 Wrapper, Kommunikationsschnittstellen, Laufzeitumgebung)
 
-Einige Dateien wurden dabei **stark modifiziert oder vollständig neu ergänzt**, da die automatische Codegenerierung allein nicht ausreichte, um die gewünschten Funktionalitäten korrekt abzubilden.
-
----
-
-## Ziel der manuellen Anpassungen
-
-Die manuellen Änderungen hatten insbesondere folgende Ziele:
-
-- Erhöhung der Verständlichkeit und Nachvollziehbarkeit des Codes  
-- Sicherstellung einer deterministischen und stabilen Laufzeit  
-- Ermöglichung der Integration in eine ROS-basierte Umgebung  
-- Praktische Nutzbarkeit über das reine Modell hinaus  
+Einige Dateien wurden dabei **stark modifiziert oder vollständig neu erstellt**, da die automatische Codegenerierung allein nicht ausreichte, um die gewünschte Funktionalität korrekt, stabil und nachvollziehbar abzubilden.
 
 ---
 
-## Hinweis
+## Abweichungen vom ursprünglichen Modell
 
-Der vorliegende Code stellt daher **keinen rein automatisch generierten AutoFOCUS-Output** dar, sondern eine **kombinierte Lösung aus generiertem Grundgerüst und manueller Implementierung**.
+Durch die manuellen Anpassungen kann es vorkommen, dass der finale Code **nicht mehr in allen Details 1:1 dem ursprünglichen AutoFOCUS-Modell entspricht**.
 
-Dies wurde bewusst so umgesetzt, um die Lücke zwischen Modellierung und lauffähigem System zu schließen.
+Diese Abweichungen sind bewusst in Kauf genommen worden, um:
+
+- reale Systemanforderungen zu erfüllen  
+- technische Einschränkungen der Zielplattform zu berücksichtigen  
+- eine saubere Integration in bestehende Softwarearchitekturen zu ermöglichen  
+
+Das AutoFOCUS-Modell dient weiterhin als **konzeptionelle und architektonische Referenz**, während der Code die **praxisnahe Implementierung** darstellt.
 
 ---
 
