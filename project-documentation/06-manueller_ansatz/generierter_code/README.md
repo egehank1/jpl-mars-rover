@@ -90,7 +90,7 @@ Die manuellen Änderungen verfolgten insbesondere folgende Ziele:
 
 Bei zukünftigen Änderungen oder Erweiterungen sollte beachtet werden:
 
-- Neuer AutoFOCUS-Code sollte **nicht blind überschrieben** werden  
+- Neuer AutoFOCUS3-Code sollte **nicht blind überschrieben** werden  
 - Manuelle Anpassungen sind klar von generierten Teilen zu trennen  
 - Eine erneute Codegenerierung erfordert ggf. eine manuelle Nachpflege  
 - Kommentare im Code geben Hinweise auf ursprünglich generierte Bereiche  
