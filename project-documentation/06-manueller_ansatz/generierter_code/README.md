@@ -1,4 +1,4 @@
-# README – AutoFOCUS-generierter und manuell angepasster Code
+# README – AutoFOCUS3-generierter und manuell angepasster Code
 
 ## Überblick
 
