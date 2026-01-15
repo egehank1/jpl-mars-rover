@@ -54,7 +54,7 @@ Ein wesentlicher Teil des Codes wurde **nachträglich manuell angepasst oder erg
 - Korrekturen an Datentypen, Signalflüssen und Initialwerten  
 - Fehlerbehebungen und Robustheitsverbesserungen  
 - Erweiterungen zur besseren Anbindung an externe Software  
-  (z. B. ROS 2 Wrapper, Kommunikationsschnittstellen, Laufzeitumgebung)
+  (z. B. ROS-2 Wrapper, Kommunikationsschnittstellen, Laufzeitumgebung)
 
 Einige Dateien wurden dabei **stark modifiziert oder vollständig neu erstellt**, da die automatische Codegenerierung allein nicht ausreichte, um die gewünschte Funktionalität korrekt, stabil und nachvollziehbar abzubilden.
 
