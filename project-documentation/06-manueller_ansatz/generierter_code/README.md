@@ -62,7 +62,7 @@ Einige Dateien wurden dabei **stark modifiziert oder vollständig neu erstellt**
 
 ## Abweichungen vom ursprünglichen Modell
 
-Durch die manuellen Anpassungen kann es vorkommen, dass der finale Code **nicht mehr in allen Details 1:1 dem ursprünglichen AutoFOCUS-Modell entspricht**.
+Durch die manuellen Anpassungen kann es vorkommen, dass der finale Code **nicht mehr in allen Details 1:1 dem ursprünglichen AutoFOCUS3-Modell entspricht**.
 
 Diese Abweichungen sind bewusst in Kauf genommen worden, um:
 
@@ -70,7 +70,7 @@ Diese Abweichungen sind bewusst in Kauf genommen worden, um:
 - technische Einschränkungen der Zielplattform zu berücksichtigen  
 - eine saubere Integration in bestehende Softwarearchitekturen zu ermöglichen  
 
-Das AutoFOCUS-Modell dient weiterhin als **konzeptionelle und architektonische Referenz**, während der Code die **praxisnahe Implementierung** darstellt.
+Das AutoFOCUS3-Modell dient weiterhin als **konzeptionelle und architektonische Referenz**, während der Code die **praxisnahe Implementierung** darstellt.
 
 ---
 
