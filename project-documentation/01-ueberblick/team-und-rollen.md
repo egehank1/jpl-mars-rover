@@ -51,7 +51,11 @@ Ziel war die Umsetzung eines möglichst **durchgängigen, automatisierten Workfl
 
 fokussierte sich zunächst sehr lange primär auf den **manuellen Ansatz**.
 
-In einem weiteren Ordner findet man eine sehr ausführliche Ausarbeitung des manuellen Ansatzes, welcher letzten Ende doch noch zu gewissem Erfolg führte.
+**Egehan Kilic, Enis Cobanoglu und Ahmet Topal**
+
+nahmen den manuellen Ansatz erneut auf, nachdem ein erster Versuch nur eingeschränkte Ergebnisse geliefert hatte. Durch eine gezielte Überarbeitung des Vorgehens sowie ein verbessertes technisches Verständnis konnte der Ansatz im zweiten Anlauf deutlich erfolgreicher umgesetzt werden.
+
+Die Ergebnisse sowie die einzelnen Umsetzungsschritte des manuellen Ansatzes sind in einem separaten Ordner detailliert dokumentiert. Diese Ausarbeitung zeigt, dass der manuelle Ansatz letztlich zu verwertbaren und nachvollziehbaren Ergebnissen geführt hat.
 
 ---
 
