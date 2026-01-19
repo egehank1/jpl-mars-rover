@@ -7,7 +7,7 @@
 #include "std_msgs/msg/string.hpp"
 #include "std_msgs/msg/bool.hpp"
 
-// Hier kommt dein bestehender Header-Code
+// Hier kommt die Header-Dateien
 extern "C" {
 #include "Component_Architecture1_ID_420.h"
 #include "data_dictionary.h"
