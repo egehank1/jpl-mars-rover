@@ -11,4 +11,4 @@ Der Fokus liegt darauf zu zeigen, wie:
 
 angebunden werden kann.
 
-Die Dokumentation ist bewusst **code-zentriert** aufgebaut und enthält **alle relevanten Dateien vollständig eingebettet**.
+Die Dokumentation ist bewusst **code-zentriert** aufgebaut und enthält **einige relevanten Dateien**.
