@@ -6,7 +6,7 @@ Dieses Verzeichnis enthält die manuelle Integration einer Ultraschall-Sensor-Lo
 Die Ultraschall-Codebase wurde manuell mit ROS 2 verbunden, um Sensordaten aus einem Modell in eine ROS-basierte Laufzeitumgebung zu integrieren. Diese Anbindung dient als Vorbereitung für eine spätere Ausführung in der Simulation sowie auf realer Hardware (Mars Rover).
 Der zugrunde liegende Code wird mit dem Tool AutoFOCUS generiert und anschließend manuell erweitert.
 
-**Tests**:
+**Tests**
 
 Zur Überprüfung der Korrektheit des Codes wurden zwei manuelle Tests durchgeführt:
 1.	Test ohne ROS 2
@@ -14,9 +14,9 @@ Direkte Ausführung des generierten Codes zur funktionalen Verifikation.
 2.	Test mit ROS 2
 Integration der Sensorlogik in ROS 2 mittels Publisher- und Subscriber-Nodes.
 
-**Ordnerstruktur**:
+**Ordnerstruktur**
 
-   **Top-Level:**
+   **Top-Level**
 
    -  package.xml
    
