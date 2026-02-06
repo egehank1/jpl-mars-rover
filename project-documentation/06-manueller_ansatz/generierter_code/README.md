@@ -56,10 +56,3 @@ Dies wurde bewusst so umgesetzt, um die Lücke zwischen Modellierung und lauffä
 
 ---
 
-### Optional
-
-Wenn du möchtest, kann ich dir auch:
-
-- eine **kürzere README-Version** (z. B. für `src-gen/`),  
-- eine **wissenschaftlichere Formulierung** für einen Abschlussbericht,  
-- oder eine **englische Version** erstellen.
