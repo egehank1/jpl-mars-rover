@@ -74,3 +74,16 @@ Das AutoFOCUS-Modell dient weiterhin als **konzeptionelle und architektonische R
 
 ---
 
+## Ziel der manuellen Anpassungen
+
+Die manuellen Änderungen verfolgten insbesondere folgende Ziele:
+
+- Erhöhung der Verständlichkeit und Nachvollziehbarkeit des Codes  
+- Verbesserung der Wartbarkeit und Erweiterbarkeit  
+- Sicherstellung einer deterministischen und stabilen Laufzeit  
+- Ermöglichung der Integration in eine ROS-basierte Umgebung  
+- Praktische Nutzbarkeit über das reine Modell hinaus  
+
+---
+
+
