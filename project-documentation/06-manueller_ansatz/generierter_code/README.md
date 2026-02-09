@@ -27,7 +27,7 @@ Für den Einsatz in einem realen Softwaresystem waren daher zusätzliche Maßnah
 
 Der Code lässt sich in zwei Hauptkategorien einteilen:
 
-### 1. AutoFOCUS-generierter Code
+### 1. AutoFOCUS3-generierter Code
 
 Der automatisch generierte Anteil umfasst insbesondere:
 
